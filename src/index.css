@@ -6,45 +6,45 @@
 
 @layer base {
   :root {
-    --background: 30 20% 98%;
-    --foreground: 30 10% 15%;
+    --background: 35 25% 97%;
+    --foreground: 30 15% 12%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 30 10% 15%;
+    --card: 36 30% 99%;
+    --card-foreground: 30 15% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 30 10% 15%;
+    --popover: 36 30% 99%;
+    --popover-foreground: 30 15% 12%;
 
-    --primary: 38 65% 42%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 36 72% 45%;
+    --primary-foreground: 36 30% 99%;
 
-    --secondary: 30 18% 92%;
-    --secondary-foreground: 30 10% 15%;
+    --secondary: 35 25% 93%;
+    --secondary-foreground: 30 15% 12%;
 
-    --muted: 30 15% 95%;
-    --muted-foreground: 30 10% 45%;
+    --muted: 35 20% 94%;
+    --muted-foreground: 30 12% 40%;
 
-    --accent: 145 35% 32%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 150 40% 28%;
+    --accent-foreground: 36 30% 99%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 15% 88%;
-    --input: 30 15% 88%;
-    --ring: 38 65% 42%;
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 36 72% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --gold: 38 65% 42%;
-    --gold-light: 38 55% 65%;
-    --gold-dark: 38 70% 30%;
-    --forest: 145 35% 32%;
-    --forest-light: 145 30% 45%;
-    --cream: 30 20% 98%;
-    --warm-gray: 30 10% 45%;
+    --gold: 36 72% 45%;
+    --gold-light: 38 60% 60%;
+    --gold-dark: 34 75% 32%;
+    --forest: 150 40% 28%;
+    --forest-light: 150 35% 42%;
+    --cream: 35 25% 97%;
+    --warm-gray: 30 12% 40%;
+    --sacred: 270 25% 35%;
   }
-
   .dark {
     --background: 30 15% 8%;
     --foreground: 30 15% 95%;

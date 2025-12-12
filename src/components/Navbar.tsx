@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe, Sparkles } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,8 +68,10 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Language Toggle & CTA */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Language Toggle, Theme Toggle & CTA */}
+          <div className="hidden md:flex items-center space-x-3">
+            <ThemeToggle />
+            
             <Button
               variant="ghost"
               size="sm"
@@ -87,7 +90,9 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center space-x-3">
+          <div className="flex md:hidden items-center space-x-2">
+            <ThemeToggle />
+            
             <Button
               variant="ghost"
               size="sm"

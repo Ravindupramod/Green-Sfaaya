@@ -1,10 +1,48 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import RoomCard from '@/components/RoomCard';
+import SEO from '@/components/SEO';
 import { Sparkles } from 'lucide-react';
 import room from '@/assets/room.jpeg';
 import room1 from '@/assets/room_1.jpeg';
 import room2 from '@/assets/room_2.jpeg';
 import balcony from '@/assets/balcony.jpeg';
+
+const roomsStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Rooms at Thaara Residence",
+  "description": "Luxury accommodation options at Thaara Residence, Anuradhapura",
+  "itemListElement": [
+    {
+      "@type": "HotelRoom",
+      "name": "Deluxe Room",
+      "description": "Spacious room with modern amenities and garden view",
+      "occupancy": { "@type": "QuantitativeValue", "value": 2 },
+      "offers": { "@type": "Offer", "price": "85", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "HotelRoom",
+      "name": "Superior Room",
+      "description": "Premium room with enhanced amenities and balcony",
+      "occupancy": { "@type": "QuantitativeValue", "value": 2 },
+      "offers": { "@type": "Offer", "price": "95", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "HotelRoom",
+      "name": "Family Suite",
+      "description": "Spacious suite perfect for families",
+      "occupancy": { "@type": "QuantitativeValue", "value": 4 },
+      "offers": { "@type": "Offer", "price": "120", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "HotelRoom",
+      "name": "Executive Suite",
+      "description": "Luxury suite with premium furnishings and private balcony",
+      "occupancy": { "@type": "QuantitativeValue", "value": 2 },
+      "offers": { "@type": "Offer", "price": "150", "priceCurrency": "USD" }
+    }
+  ]
+};
 
 const Rooms = () => {
   const { t, language } = useLanguage();
@@ -17,7 +55,15 @@ const Rooms = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <SEO
+        title="Rooms & Suites"
+        description="Explore our luxury rooms and suites at Thaara Residence. Deluxe rooms, superior rooms, family suites, and executive suites with modern amenities near Anuradhapura's sacred sites."
+        keywords="Anuradhapura hotel rooms, luxury suites Sri Lanka, family accommodation Anuradhapura, boutique hotel rooms"
+        url="https://thaararesidence.com/rooms"
+        structuredData={roomsStructuredData}
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-secondary" />
@@ -78,6 +124,7 @@ const Rooms = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

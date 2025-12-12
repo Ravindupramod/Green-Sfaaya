@@ -4,6 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import RoomCard from '@/components/RoomCard';
 import Testimonials from '@/components/Testimonials';
+import SEO from '@/components/SEO';
 import heroImage from '@/assets/hero.jpeg';
 import room1 from '@/assets/room_1.jpeg';
 import room2 from '@/assets/room_2.jpeg';
@@ -29,7 +30,14 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <>
+      <SEO
+        title="Thaara Residence | Luxury Spiritual Retreat in Anuradhapura, Sri Lanka"
+        description="Experience spiritual tranquility at Thaara Residence, a luxury boutique hotel near UNESCO World Heritage sites in Anuradhapura, Sri Lanka. Perfect for pilgrims and spiritual travelers."
+        keywords="Anuradhapura hotel, spiritual retreat Sri Lanka, luxury accommodation, Buddhist pilgrimage hotel, UNESCO heritage sites"
+        url="https://thaararesidence.com"
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
@@ -294,6 +302,7 @@ const Index = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

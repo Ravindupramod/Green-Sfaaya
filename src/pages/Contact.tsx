@@ -7,6 +7,25 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
+import SEO from '@/components/SEO';
+
+const contactStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "mainEntity": {
+    "@type": "LodgingBusiness",
+    "name": "Thaara Residence",
+    "telephone": "+94779084494",
+    "email": "info@thaararesidence.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "New Town",
+      "addressLocality": "Anuradhapura",
+      "addressRegion": "North Central Province",
+      "addressCountry": "LK"
+    }
+  }
+};
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -37,7 +56,15 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <SEO
+        title="Contact & Book"
+        description="Book your stay at Thaara Residence or inquire about our luxury rooms in Anuradhapura. Contact us via WhatsApp, phone, or our inquiry form."
+        keywords="book hotel Anuradhapura, contact Thaara Residence, hotel reservation Sri Lanka, spiritual retreat booking"
+        url="https://thaararesidence.com/contact"
+        structuredData={contactStructuredData}
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-secondary" />
@@ -292,6 +319,7 @@ const Contact = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

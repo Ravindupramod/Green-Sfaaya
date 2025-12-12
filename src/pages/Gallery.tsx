@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { X, Camera, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import SEO from '@/components/SEO';
 import hero from '@/assets/hero.jpeg';
 import room from '@/assets/room.jpeg';
 import room1 from '@/assets/room_1.jpeg';
@@ -49,7 +50,14 @@ const Gallery = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <SEO
+        title="Photo Gallery"
+        description="Explore our luxury rooms, stunning views, and modern amenities at Thaara Residence through our photo gallery. See why guests love their spiritual retreat experience."
+        keywords="Thaara Residence photos, Anuradhapura hotel gallery, hotel room photos Sri Lanka, boutique hotel images"
+        url="https://thaararesidence.com/gallery"
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
@@ -174,6 +182,7 @@ const Gallery = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

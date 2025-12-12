@@ -2,6 +2,7 @@ import { MapPin, Clock, Star, Compass } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import SEO from '@/components/SEO';
 
 // Import attraction images
 import ruwanwelisaya from '@/assets/attractions/ruwanwelisaya.jpg';
@@ -12,6 +13,24 @@ import abhayagiri from '@/assets/attractions/abhayagiri.jpg';
 import jetavanaramaya from '@/assets/attractions/jetavanaramaya.jpg';
 import twinPonds from '@/assets/attractions/twin-ponds.jpg';
 import mihintale from '@/assets/attractions/mihintale.jpg';
+
+const attractionsStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "TouristDestination",
+  "name": "Anuradhapura Sacred City",
+  "description": "UNESCO World Heritage Site featuring ancient Buddhist monuments, stupas, and the sacred Bo Tree",
+  "touristType": ["Buddhist Pilgrims", "Spiritual Travelers", "History Enthusiasts"],
+  "includesAttraction": [
+    { "@type": "TouristAttraction", "name": "Ruwanwelisaya Stupa", "description": "Sacred Buddhist stupa built by King Dutugemunu" },
+    { "@type": "TouristAttraction", "name": "Jaya Sri Maha Bodhi", "description": "The oldest documented tree in the world, over 2,300 years old" },
+    { "@type": "TouristAttraction", "name": "Isurumuniya Temple", "description": "Ancient rock temple with famous stone carvings" },
+    { "@type": "TouristAttraction", "name": "Thuparamaya", "description": "First dagaba built in Sri Lanka after introduction of Buddhism" },
+    { "@type": "TouristAttraction", "name": "Abhayagiri Monastery", "description": "Ancient Buddhist monastery and stupa complex" },
+    { "@type": "TouristAttraction", "name": "Jetavanaramaya", "description": "One of the tallest ancient structures in the world" },
+    { "@type": "TouristAttraction", "name": "Kuttam Pokuna (Twin Ponds)", "description": "Ancient bathing pools with sophisticated hydraulic engineering" },
+    { "@type": "TouristAttraction", "name": "Mihintale", "description": "Birthplace of Buddhism in Sri Lanka" }
+  ]
+};
 
 const Attractions = () => {
   const { t, language } = useLanguage();
@@ -116,7 +135,15 @@ const Attractions = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <SEO
+        title="Nearby Attractions"
+        description="Discover UNESCO World Heritage Buddhist sites near Thaara Residence including Ruwanwelisaya, Jaya Sri Maha Bodhi, and Mihintale. Perfect base for your spiritual pilgrimage."
+        keywords="Anuradhapura attractions, UNESCO sites Sri Lanka, Buddhist temples, Ruwanwelisaya, Sacred Bo Tree, Mihintale"
+        url="https://thaararesidence.com/attractions"
+        structuredData={attractionsStructuredData}
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
@@ -287,6 +314,7 @@ const Attractions = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

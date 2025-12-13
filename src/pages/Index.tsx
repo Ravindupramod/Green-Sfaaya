@@ -32,9 +32,9 @@ const Index = () => {
   return (
     <>
       <SEO
-        title="Thaara Residence | Luxury Spiritual Retreat in Anuradhapura, Sri Lanka"
-        description="Experience spiritual tranquility at Thaara Residence, a luxury boutique hotel near UNESCO World Heritage sites in Anuradhapura, Sri Lanka. Perfect for pilgrims and spiritual travelers."
-        keywords="Anuradhapura hotel, spiritual retreat Sri Lanka, luxury accommodation, Buddhist pilgrimage hotel, UNESCO heritage sites"
+        title="Thaara Residence | Luxury Boutique Hotel in Anuradhapura, Sri Lanka"
+        description="Discover refined elegance at Thaara Residence, an exclusive boutique hotel near UNESCO World Heritage sites in Anuradhapura, Sri Lanka. Experience unparalleled luxury and comfort."
+        keywords="Anuradhapura luxury hotel, boutique accommodation Sri Lanka, UNESCO heritage sites hotel, exclusive residence Anuradhapura"
         url="https://thaararesidence.com"
       />
       <div className="min-h-screen">
@@ -61,7 +61,7 @@ const Index = () => {
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-background/10 backdrop-blur-luxury rounded-full mb-8 border border-primary/30">
               <Sparkles className="h-4 w-4 text-primary" />
               <span className="font-sans text-sm uppercase tracking-[0.25em] text-primary">
-                {language === 'en' ? 'Spiritual Sanctuary' : 'අධ්‍යාත්මික සෙවණැල්ල'}
+                {language === 'en' ? 'Exclusive Luxury' : 'සුවිශේෂී සුඛෝපභෝගීත්වය'}
               </span>
               <Sparkles className="h-4 w-4 text-primary" />
             </div>
@@ -71,8 +71,8 @@ const Index = () => {
             </h1>
             <p className="font-sans text-lg md:text-xl text-white/85 mb-6 max-w-2xl mx-auto leading-relaxed font-light">
               {language === 'en' 
-                ? 'Where ancient wisdom meets modern comfort in the sacred city of Anuradhapura'
-                : 'අනුරාධපුර ශුද්ධ නගරයේ පුරාණ ප්‍රඥාව නවීන සුවපහසුව හමුවන තැන'
+                ? 'Where timeless elegance meets refined comfort in the historic city of Anuradhapura'
+                : 'ඓතිහාසික අනුරාධපුර නගරයේ සදාකාලික අලංකාරය සවිස්තරාත්මක සුවපහසුව හමුවන තැන'
               }
             </p>
             <div className="flex items-center justify-center gap-2 text-white/60 mb-12">
@@ -83,13 +83,13 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
               <Button asChild size="lg" className="text-base px-10 py-7 bg-primary hover:bg-primary/90 text-primary-foreground shadow-luxury hover-glow font-semibold tracking-wide">
                 <Link to="/rooms">
-                  {language === 'en' ? 'Discover Rooms' : 'කාමර සොයන්න'}
+                  {language === 'en' ? 'Explore Suites' : 'කාමර සොයන්න'}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="text-base px-10 py-7 bg-white/5 backdrop-blur-luxury border-white/20 text-white hover:bg-white hover:text-foreground transition-all duration-500">
                 <Link to="/attractions">
-                  {language === 'en' ? 'Sacred Sites' : 'ශුද්ධ ස්ථාන'}
+                  {language === 'en' ? 'Heritage Sites' : 'උරුම ස්ථාන'}
                 </Link>
               </Button>
             </div>
@@ -105,15 +105,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Spiritual Journey Banner */}
+      {/* Elegance Banner */}
       <section className="py-6 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border-y border-primary/10">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-8 text-center">
             <div className="hidden md:block w-16 h-px bg-gradient-to-r from-transparent to-primary/30" />
             <p className="font-serif text-lg text-foreground/80 italic">
               {language === 'en' 
-                ? '"Your gateway to spiritual enlightenment in the ancient kingdom"'
-                : '"පුරාණ රාජධානියේ අධ්‍යාත්මික ප්‍රබෝධය සඳහා ඔබේ දොරටුව"'
+                ? '"Experience the art of refined living in the ancient kingdom"'
+                : '"පුරාණ රාජධානියේ සවිස්තරාත්මක ජීවන කලාව අත්විඳින්න"'
               }
             </p>
             <div className="hidden md:block w-16 h-px bg-gradient-to-l from-transparent to-primary/30" />
@@ -133,20 +133,20 @@ const Index = () => {
               <div className="inline-flex items-center gap-3 mb-6">
                 <Sparkles className="h-5 w-5 text-primary" />
                 <span className="font-sans text-sm uppercase tracking-[0.25em] text-primary font-medium">
-                  {language === 'en' ? 'Your Sanctuary' : 'ඔබේ සෙවණැල්ල'}
+                  {language === 'en' ? 'Our Story' : 'අපගේ කතාව'}
                 </span>
               </div>
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-8 leading-tight">
-                {language === 'en' ? 'A Haven for' : 'අධ්‍යාත්මික'}
-                <span className="block text-gradient-gold">{language === 'en' ? 'Spiritual Seekers' : 'ගවේෂකයන් සඳහා'}</span>
+                {language === 'en' ? 'A Retreat of' : 'නිවාතැනක්'}
+                <span className="block text-gradient-gold">{language === 'en' ? 'Timeless Elegance' : 'සදාකාලික අලංකාරය'}</span>
               </h2>
               <p className="font-sans text-muted-foreground leading-relaxed text-lg mb-6">
                 {t('about.description')}
               </p>
               <p className="font-sans text-muted-foreground leading-relaxed mb-10">
                 {language === 'en'
-                  ? 'Nestled in the heart of the sacred city, our residence offers the perfect retreat for those seeking peace, enlightenment, and a deeper connection with ancient Buddhist heritage.'
-                  : 'ශුද්ධ නගරයේ හදවතේ පිහිටි අපගේ නිවාසය සාමය, ප්‍රබෝධය සහ පුරාණ බෞද්ධ උරුමය සමඟ ගැඹුරු සම්බන්ධතාවක් සොයන අයට පරිපූර්ණ නවාතැන් පහසුකම් සපයයි.'
+                  ? 'Nestled in the heart of this historic city, our residence offers an exquisite retreat for discerning travelers seeking refined comfort and proximity to ancient wonders.'
+                  : 'මෙම ඓතිහාසික නගරයේ හදවතේ පිහිටි අපගේ නිවාසය, විශිෂ්ට සුවපහසුව සහ පුරාණ අද්භූත දේ ආසන්නයේ සොයන විචක්ෂණ සංචාරකයන් සඳහා විශිෂ්ට නවාතැනක් ලබා දෙයි.'
                 }
               </p>
               <div className="flex flex-wrap gap-4">
@@ -156,11 +156,11 @@ const Index = () => {
                 </div>
                 <div className="flex items-center gap-3 px-5 py-4 bg-secondary/80 rounded-xl border border-primary/10">
                   <Leaf className="h-5 w-5 text-accent" />
-                  <span className="font-sans text-sm text-foreground font-medium">{language === 'en' ? 'Peaceful Setting' : 'සාමකාමී පරිසරය'}</span>
+                  <span className="font-sans text-sm text-foreground font-medium">{language === 'en' ? 'Serene Ambiance' : 'සන්සුන් වාතාවරණය'}</span>
                 </div>
                 <div className="flex items-center gap-3 px-5 py-4 bg-secondary/80 rounded-xl border border-primary/10">
                   <MapPin className="h-5 w-5 text-primary" />
-                  <span className="font-sans text-sm text-foreground font-medium">{language === 'en' ? 'Sacred Location' : 'ශුද්ධ ස්ථානය'}</span>
+                  <span className="font-sans text-sm text-foreground font-medium">{language === 'en' ? 'Prime Location' : 'ප්‍රධාන ස්ථානය'}</span>
                 </div>
               </div>
             </div>
@@ -276,13 +276,13 @@ const Index = () => {
           <div className="max-w-4xl mx-auto text-center">
             <Sparkles className="w-10 h-10 text-primary mx-auto mb-8 opacity-80" />
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-              {language === 'en' ? 'Begin Your' : 'ඔබේ අධ්‍යාත්මික'}
-              <span className="block text-gradient-gold">{language === 'en' ? 'Spiritual Journey' : 'ගමන ආරම්භ කරන්න'}</span>
+              {language === 'en' ? 'Begin Your' : 'ඔබේ'}
+              <span className="block text-gradient-gold">{language === 'en' ? 'Extraordinary Stay' : 'විශේෂ නවාතැන් අත්දැකීම'}</span>
             </h2>
             <p className="font-sans text-xl text-white/70 mb-12 leading-relaxed max-w-2xl mx-auto">
               {language === 'en' 
-                ? 'Experience the perfect harmony of luxury and spirituality. Reserve your sanctuary in the heart of ancient Anuradhapura.'
-                : 'සුඛෝපභෝගීත්වය සහ අධ්‍යාත්මිකත්වයේ පරිපූර්ණ සමගිය අත්විඳින්න. පුරාණ අනුරාධපුරයේ හදවතේ ඔබේ සෙවණැල්ල වෙන් කරගන්න.'
+                ? 'Indulge in the perfect harmony of luxury and heritage. Reserve your exclusive retreat in the heart of historic Anuradhapura.'
+                : 'සුඛෝපභෝගීත්වය සහ උරුමයේ පරිපූර්ණ සමගිය භුක්ති විඳින්න. ඓතිහාසික අනුරාධපුරයේ හදවතේ ඔබේ විශේෂ නිවාතැන වෙන් කරගන්න.'
               }
             </p>
             <div className="flex flex-col sm:flex-row gap-5 justify-center">

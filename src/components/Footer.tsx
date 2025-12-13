@@ -21,14 +21,14 @@ const Footer = () => {
                 <h3 className="font-serif text-3xl font-bold">
                   <span className="text-primary">Thaara</span> Residence
                 </h3>
-                <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-background/50">Spiritual Sanctuary</p>
+                <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-background/50">Boutique Hotel</p>
               </div>
             </div>
             <p className="text-background/60 font-sans text-sm leading-relaxed max-w-md mb-6">
               {t('footer.description')}
             </p>
             <p className="text-background/40 font-serif text-sm italic">
-              "Where ancient wisdom meets modern comfort"
+              "Where timeless elegance meets refined comfort"
             </p>
           </div>
 
@@ -86,7 +86,7 @@ const Footer = () => {
               © {new Date().getFullYear()} Thaara Residence. {t('footer.rights')}.
             </p>
             <div className="flex items-center gap-6">
-              <span className="text-background/30 font-sans text-xs">Sacred City of Anuradhapura, Sri Lanka</span>
+              <span className="text-background/30 font-sans text-xs">Historic City of Anuradhapura, Sri Lanka</span>
             </div>
           </div>
         </div>

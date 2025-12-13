@@ -1,6 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import RoomCard from '@/components/RoomCard';
 import SEO from '@/components/SEO';
+import VirtualTour from '@/components/VirtualTour';
 import { Sparkles } from 'lucide-react';
 import room from '@/assets/room.jpeg';
 import room1 from '@/assets/room_1.jpeg';
@@ -85,8 +86,8 @@ const Rooms = () => {
           </h1>
           <p className="font-sans text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             {language === 'en' 
-              ? 'Each room is thoughtfully designed as a peaceful sanctuary, where modern luxury meets spiritual tranquility'
-              : 'සෑම කාමරයක්ම නූතන සුඛෝපභෝගීත්වය අධ්‍යාත්මික සන්සුන්කම හමුවන සාමකාමී සෙවණැල්ලක් ලෙස සැලකිල්ලෙන් නිර්මාණය කර ඇත'
+              ? 'Each room is thoughtfully designed as a refined retreat, where timeless elegance meets modern comfort'
+              : 'සෑම කාමරයක්ම නූතන සුඛෝපභෝගීත්වය සන්සුන්කම හමුවන සාමකාමී සෙවණැල්ලක් ලෙස සැලකිල්ලෙන් නිර්මාණය කර ඇත'
             }
           </p>
           <div className="mt-8 flex justify-center">
@@ -108,6 +109,9 @@ const Rooms = () => {
         </div>
       </section>
 
+      {/* Virtual Tour Section */}
+      <VirtualTour />
+
       {/* Info Banner */}
       <section className="py-16 bg-gradient-to-r from-secondary via-card to-secondary relative overflow-hidden">
         <div className="absolute inset-0 bg-luxury-radial opacity-30" />
@@ -117,8 +121,8 @@ const Rooms = () => {
           </h3>
           <p className="font-sans text-muted-foreground max-w-2xl mx-auto">
             {language === 'en' 
-              ? 'Planning a spiritual retreat? Contact us for exclusive weekly and monthly rates tailored for pilgrims and meditation practitioners.'
-              : 'අධ්‍යාත්මික භාවනා නවාතැනක් සැලසුම් කරනවාද? වන්දනාකරුවන් සහ භාවනා අභ්‍යාසකයින් සඳහා සකස් කළ සතිපතා සහ මාසික විශේෂ මිල ගණන් සඳහා අප අමතන්න.'
+              ? 'Planning an extended getaway? Contact us for exclusive weekly and monthly rates tailored for discerning travelers.'
+              : 'දිගු නිවාඩුවක් සැලසුම් කරනවාද? විචක්ෂණ සංචාරකයන් සඳහා සකස් කළ සතිපතා සහ මාසික විශේෂ මිල ගණන් සඳහා අප අමතන්න.'
             }
           </p>
         </div>

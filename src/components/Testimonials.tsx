@@ -6,28 +6,28 @@ const testimonials = [
     name: 'Sarah Mitchell',
     location: 'United Kingdom',
     quote: {
-      en: 'Thaara Residence provided the perfect sanctuary for my spiritual journey. Waking up to meditate with the ancient stupas visible in the distance was truly transformative.',
-      si: 'තාර රෙසිඩන්ස් මාගේ අධ්‍යාත්මික ගමනට පරිපූර්ණ සෙවණැල්ලක් ලබා දුන්නා. පුරාණ ස්තූප දුරින් පෙනෙන තැන අවදි වී භාවනා කිරීම සැබවින්ම පරිවර්තනාත්මක වූවා.',
+      en: 'Thaara Residence exceeded all expectations. The attention to detail, impeccable service, and stunning views made our anniversary trip absolutely unforgettable.',
+      si: 'තාර රෙසිඩන්ස් සියලු අපේක්ෂාවන් ඉක්මවා ගියා. විස්තර කෙරෙහි අවධානය, නිර්දෝෂී සේවාව සහ අපූරු දර්ශන අපගේ සංවත්සර චාරිකාව සම්පූර්ණයෙන්ම අමතක නොවන එකක් කළා.',
     },
     rating: 5,
-    type: 'Spiritual Retreat',
+    type: 'Anniversary',
   },
   {
     name: 'Dr. Rajesh Sharma',
     location: 'India',
     quote: {
-      en: 'As a Buddhist practitioner, visiting Anuradhapura was a dream. The hosts at Thaara understood my needs perfectly - peaceful rooms, early morning support, and genuine warmth.',
-      si: 'බෞද්ධ ගුණ අනුගාමිකයෙකු ලෙස අනුරාධපුරයට පැමිණීම සිහිනයක් වූවා. තාර හි අයිතිකරුවන් මාගේ අවශ්‍යතා පරිපූර්ණ ලෙස තේරුම් ගත්තා - සාමකාමී කාමර, උදෑසන සහාය, සහ සැබෑ උණුසුම.',
+      en: 'An oasis of tranquility near the heritage sites. The hosts provided exceptional hospitality - elegant rooms, gourmet breakfast, and genuine warmth throughout our stay.',
+      si: 'උරුම ස්ථාන ආසන්නයේ සන්සුන්භාවයේ ජලාවාසයක්. අයිතිකරුවන් විශිෂ්ට ආගන්තුක සත්කාරය ලබා දුන්නා - අලංකාර කාමර, ප්‍රශස්ත උදෑසන ආහාරය, සහ අපගේ නවාතැන පුරාවට සැබෑ උණුසුම.',
     },
     rating: 5,
-    type: 'Pilgrimage',
+    type: 'Heritage Tour',
   },
   {
     name: 'Emma & James Foster',
     location: 'Australia',
     quote: {
-      en: 'We spent a week at Thaara exploring the sacred sites. The tranquil atmosphere and excellent location made our pilgrimage experience complete. Highly recommended for seekers.',
-      si: 'අපි සතියක් තාර හි ශුද්ධ ස්ථාන ගවේෂණය කළා. සන්සුන් වාතාවරණය සහ විශිෂ්ට පිහිටීම අපගේ වන්දනාමාන අත්දැකීම සම්පූර්ණ කළා. ගවේෂකයන්ට විශේෂයෙන් නිර්දේශ කරනවා.',
+      en: 'We spent a wonderful week exploring the ancient ruins. The sophisticated atmosphere and prime location made our cultural journey complete. Highly recommended for discerning travelers.',
+      si: 'අපි පුරාණ නටබුන් ගවේෂණය කරමින් අපූරු සතියක් ගත කළා. නවීන වාතාවරණය සහ ප්‍රධාන පිහිටීම අපගේ සංස්කෘතික ගමන සම්පූර්ණ කළා. විචක්ෂණ සංචාරකයන්ට විශේෂයෙන් නිර්දේශ කරනවා.',
     },
     rating: 5,
     type: 'Extended Stay',
@@ -54,13 +54,13 @@ const Testimonials = () => {
             <div className="h-px w-12 bg-gradient-to-l from-transparent to-primary/50" />
           </div>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-            {language === 'en' ? 'Voices of' : 'අධ්‍යාත්මික'}
-            <span className="block text-gradient-gold">{language === 'en' ? 'Spiritual Travelers' : 'ගමන්කරුවන්ගේ හඬ'}</span>
+            {language === 'en' ? 'Words from Our' : 'අපගේ'}
+            <span className="block text-gradient-gold">{language === 'en' ? 'Distinguished Guests' : 'විශිෂ්ට අමුත්තන්ගේ වචන'}</span>
           </h2>
           <p className="font-sans text-muted-foreground max-w-2xl mx-auto text-lg">
             {language === 'en' 
-              ? 'Discover how our guests found peace, enlightenment, and memorable experiences during their stay'
-              : 'අපගේ ආගන්තුකයන් ඔවුන්ගේ නවාතැන් සමයේදී සාමය, ප්‍රබෝධය සහ අමතක නොවන අත්දැකීම් සොයාගත් ආකාරය සොයා ගන්න'
+              ? 'Discover how our guests experienced unparalleled luxury and created lasting memories during their stay'
+              : 'අපගේ ආගන්තුකයන් ඔවුන්ගේ නවාතැන් සමයේදී අසමසම සුඛෝපභෝගීත්වය අත්විඳ දිගුකාලීන මතකයන් නිර්මාණය කළ ආකාරය සොයා ගන්න'
             }
           </p>
         </div>

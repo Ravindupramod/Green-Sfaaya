@@ -4,6 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import RoomCard from '@/components/RoomCard';
 import Testimonials from '@/components/Testimonials';
+import ExclusivePackages from '@/components/ExclusivePackages';
 import SEO from '@/components/SEO';
 import heroImage from '@/assets/hero.jpeg';
 import room1 from '@/assets/room_1.jpeg';
@@ -262,6 +263,9 @@ const Index = () => {
 
       {/* Testimonials Section */}
       <Testimonials />
+
+      {/* Exclusive Packages Section */}
+      <ExclusivePackages />
 
       {/* CTA Section */}
       <section className="py-32 bg-gradient-to-br from-foreground via-foreground/95 to-foreground relative overflow-hidden">

@@ -44,14 +44,14 @@ export const translations: Translations = {
   'rooms.viewAll': { en: 'View All Rooms', si: 'සියලුම කාමර බලන්න' },
 
   // Room Types
-  'room.deluxe': { en: 'Deluxe Room', si: 'ඩිලක්ස් කාමරය' },
-  'room.deluxe.desc': { en: 'Spacious room with king-size bed, private balcony with garden view, and modern amenities.', si: 'කිං-සයිස් ඇඳ, උද්‍යාන දර්ශනය සහිත පෞද්ගලික බැල්කනිය සහ නවීන පහසුකම් සහිත පුළුල් කාමරය.' },
-  'room.superior': { en: 'Superior Room', si: 'සුපීරියර් කාමරය' },
-  'room.superior.desc': { en: 'Elegant room featuring twin beds, scenic balcony views, and premium bathroom facilities.', si: 'ද්විත්ව ඇඳන්, දර්ශනීය බැල්කනි දසුන් සහ උසස් නාන කාමර පහසුකම් සහිත අලංකාර කාමරය.' },
-  'room.family': { en: 'Family Suite', si: 'පවුල් සූට්' },
-  'room.family.desc': { en: 'Perfect for families, featuring multiple beds, spacious living area, and connecting bathroom.', si: 'පවුල් සඳහා පරිපූර්ණ, බහු ඇඳන්, පුළුල් නිවාස ප්‍රදේශය සහ සම්බන්ධ නාන කාමරය.' },
-  'room.executive': { en: 'Executive Suite', si: 'එක්සෙක්යුටිව් සූට්' },
-  'room.executive.desc': { en: 'Luxurious suite with premium furnishings, panoramic views, and exclusive amenities.', si: 'උසස් ගෘහ භාණ්ඩ, පැනරමික දර්ශන සහ සුවිශේෂී පහසුකම් සහිත සුඛෝපභෝගී සූට්.' },
+  'room.master1': { en: 'Master Bedroom I', si: 'ප්‍රධාන නිදන කාමරය I' },
+  'room.master1.desc': { en: 'Elegant master bedroom with king-size bed, premium wooden furnishings, and modern amenities for a refined stay.', si: 'කිං-සයිස් ඇඳ, උසස් ලී ගෘහ භාණ්ඩ සහ නවීන පහසුකම් සහිත අලංකාර ප්‍රධාන නිදන කාමරය.' },
+  'room.master2': { en: 'Master Bedroom II', si: 'ප්‍රධාන නිදන කාමරය II' },
+  'room.master2.desc': { en: 'Spacious master bedroom featuring natural lighting, warm curtains, and comfortable furnishings for ultimate relaxation.', si: 'ස්වාභාවික ආලෝකය, උණුසුම් තිර රෙදි සහ සුවපහසු ගෘහ භාණ්ඩ සහිත පුළුල් ප්‍රධාන නිදන කාමරය.' },
+  'room.single1': { en: 'Single Room I', si: 'තනි කාමරය I' },
+  'room.single1.desc': { en: 'Cozy single room with double bed, elegant wooden furniture, and all essential amenities for a comfortable stay.', si: 'ද්විත්ව ඇඳ, අලංකාර ලී ගෘහ භාණ්ඩ සහ සුවපහසු නවාතැනක් සඳහා සියලුම අත්‍යවශ්‍ය පහසුකම් සහිත සුවපහසු තනි කාමරය.' },
+  'room.single2': { en: 'Single Room II', si: 'තනි කාමරය II' },
+  'room.single2.desc': { en: 'Charming single room with warm natural light, wooden accents, and premium bedding for restful nights.', si: 'උණුසුම් ස්වාභාවික ආලෝකය, ලී අලංකාර භාවිතය සහ සුවපහසු රාත්‍රී සඳහා උසස් ඇඳ ඇතිරිලි සහිත ආකර්ෂණීය තනි කාමරය.' },
 
   // Gallery
   'gallery.title': { en: 'Photo Gallery', si: 'ඡායාරූප ගැලරිය' },

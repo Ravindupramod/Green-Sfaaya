@@ -7,14 +7,12 @@ import { Eye, ChevronLeft, ChevronRight, X, Maximize2, RotateCcw } from 'lucide-
 import { useLanguage } from '@/contexts/LanguageContext';
 import * as THREE from 'three';
 
-import room1 from '@/assets/room_1.jpeg';
-import room2 from '@/assets/room_2.jpeg';
-import room from '@/assets/room.jpeg';
-import balcony from '@/assets/balcony.jpeg';
-import balcony1 from '@/assets/balcony_1.jpeg';
-import washroom2 from '@/assets/washroom_2.jpeg';
-import washroom3 from '@/assets/washroom_3.jpeg';
-import view2 from '@/assets/view_2.jpeg';
+import masterBedroom1 from '@/assets/rooms/master-bedroom-1.jpeg';
+import masterBedroom2 from '@/assets/rooms/master-bedroom-2.jpeg';
+import singleRoom1 from '@/assets/rooms/single-room-1.jpeg';
+import singleRoom2 from '@/assets/rooms/single-room-2.jpeg';
+import bathroom from '@/assets/rooms/bathroom.jpeg';
+import diningArea from '@/assets/rooms/dining-area.jpeg';
 
 interface RoomScene {
   id: string;
@@ -27,36 +25,52 @@ interface RoomScene {
 
 const roomScenes: RoomScene[] = [
   {
-    id: 'deluxe',
-    name: 'Deluxe Room',
-    nameSi: 'ඩිලක්ස් කාමරය',
-    images: [room1, room2],
-    description: 'Experience refined comfort with elegant furnishings and modern amenities',
-    descriptionSi: 'අලංකාර ගෘහ භාණ්ඩ සහ නවීන පහසුකම් සහිත සැපසුව සුවපහසුව අත්විඳින්න',
+    id: 'master1',
+    name: 'Master Bedroom I',
+    nameSi: 'ප්‍රධාන නිදන කාමරය I',
+    images: [masterBedroom1],
+    description: 'Elegant master bedroom with king-size bed and premium wooden furnishings',
+    descriptionSi: 'කිං-සයිස් ඇඳ සහ උසස් ලී ගෘහ භාණ්ඩ සහිත අලංකාර ප්‍රධාන නිදන කාමරය',
   },
   {
-    id: 'family',
-    name: 'Family Suite',
-    nameSi: 'පවුල් සූට්',
-    images: [room, balcony],
-    description: 'Spacious suite with premium amenities perfect for family stays',
-    descriptionSi: 'පවුල් නවාතැන් සඳහා පරිපූර්ණ ප්‍රීමියම් පහසුකම් සහිත පුළුල් සූට්',
+    id: 'master2',
+    name: 'Master Bedroom II',
+    nameSi: 'ප්‍රධාන නිදන කාමරය II',
+    images: [masterBedroom2],
+    description: 'Spacious master bedroom with natural lighting and warm ambiance',
+    descriptionSi: 'ස්වාභාවික ආලෝකය සහ උණුසුම් වාතාවරණය සහිත පුළුල් ප්‍රධාන නිදන කාමරය',
   },
   {
-    id: 'balcony',
-    name: 'Private Balcony',
-    nameSi: 'පුද්ගලික බැල්කනිය',
-    images: [balcony, balcony1, view2],
-    description: 'Breathtaking views from your private outdoor space',
-    descriptionSi: 'ඔබේ පුද්ගලික එළිමහන් අවකාශයෙන් විශ්මයජනක දර්ශන',
+    id: 'single1',
+    name: 'Single Room I',
+    nameSi: 'තනි කාමරය I',
+    images: [singleRoom1],
+    description: 'Cozy single room with elegant wooden furniture and essential amenities',
+    descriptionSi: 'අලංකාර ලී ගෘහ භාණ්ඩ සහ අත්‍යවශ්‍ය පහසුකම් සහිත සුවපහසු තනි කාමරය',
+  },
+  {
+    id: 'single2',
+    name: 'Single Room II',
+    nameSi: 'තනි කාමරය II',
+    images: [singleRoom2],
+    description: 'Charming single room with warm natural light and premium bedding',
+    descriptionSi: 'උණුසුම් ස්වාභාවික ආලෝකය සහ උසස් ඇඳ ඇතිරිලි සහිත ආකර්ෂණීය තනි කාමරය',
   },
   {
     id: 'bathroom',
-    name: 'Luxury Bathroom',
-    nameSi: 'සුඛෝපභෝගී නාන කාමරය',
-    images: [washroom2, washroom3],
-    description: 'Modern bathrooms with premium fixtures and amenities',
-    descriptionSi: 'ප්‍රීමියම් සවිකෘත සහ පහසුකම් සහිත නවීන නාන කාමර',
+    name: 'Modern Bathroom',
+    nameSi: 'නවීන නාන කාමරය',
+    images: [bathroom],
+    description: 'Contemporary bathroom with premium fixtures and elegant design',
+    descriptionSi: 'ප්‍රීමියම් සවිකෘත සහ අලංකාර නිර්මාණය සහිත සමකාලීන නාන කාමරය',
+  },
+  {
+    id: 'dining',
+    name: 'Dining Area',
+    nameSi: 'ආහාර කාමරය',
+    images: [diningArea],
+    description: 'Elegant common dining space with wooden furnishings',
+    descriptionSi: 'ලී ගෘහ භාණ්ඩ සහිත අලංකාර පොදු ආහාර අවකාශය',
   },
 ];
 

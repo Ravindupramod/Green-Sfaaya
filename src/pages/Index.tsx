@@ -7,9 +7,9 @@ import Testimonials from '@/components/Testimonials';
 import ExclusivePackages from '@/components/ExclusivePackages';
 import SEO from '@/components/SEO';
 import heroImage from '@/assets/hero.jpeg';
-import room1 from '@/assets/room_1.jpeg';
-import room2 from '@/assets/room_2.jpeg';
-import room from '@/assets/room.jpeg';
+import masterBedroom1 from '@/assets/rooms/master-bedroom-1.jpeg';
+import masterBedroom2 from '@/assets/rooms/master-bedroom-2.jpeg';
+import singleRoom1 from '@/assets/rooms/single-room-1.jpeg';
 import viewImage from '@/assets/view_2.jpeg';
 
 const Index = () => {
@@ -25,9 +25,9 @@ const Index = () => {
   ];
 
   const featuredRooms = [
-    { image: room1, titleKey: 'room.deluxe', descKey: 'room.deluxe.desc', price: 85 },
-    { image: room2, titleKey: 'room.superior', descKey: 'room.superior.desc', price: 95 },
-    { image: room, titleKey: 'room.family', descKey: 'room.family.desc', price: 120 },
+    { image: masterBedroom1, titleKey: 'room.master1', descKey: 'room.master1.desc', price: 85 },
+    { image: masterBedroom2, titleKey: 'room.master2', descKey: 'room.master2.desc', price: 85 },
+    { image: singleRoom1, titleKey: 'room.single1', descKey: 'room.single1.desc', price: 55 },
   ];
 
   return (

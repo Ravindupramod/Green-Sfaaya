@@ -1,7 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import RoomCard from '@/components/RoomCard';
 import SEO from '@/components/SEO';
-import VirtualTour from '@/components/VirtualTour';
 import { Sparkles, Bed, Users } from 'lucide-react';
 import masterBedroom1 from '@/assets/rooms/master-bedroom-1.jpeg';
 import masterBedroom2 from '@/assets/rooms/master-bedroom-2.jpeg';
@@ -181,9 +180,6 @@ const Rooms = () => {
             </div>
           </div>
         </section>
-
-        {/* Virtual Tour Section */}
-        <VirtualTour />
 
         {/* Info Banner */}
         <section className="py-16 bg-gradient-to-r from-secondary via-card to-secondary relative overflow-hidden">

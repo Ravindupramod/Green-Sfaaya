@@ -3,15 +3,16 @@ import { X, Camera, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEO from '@/components/SEO';
 import hero from '@/assets/hero.jpeg';
-import room from '@/assets/room.jpeg';
-import room1 from '@/assets/room_1.jpeg';
-import room2 from '@/assets/room_2.jpeg';
+import front from '@/assets/front.jpeg';
 import balcony from '@/assets/balcony.jpeg';
 import balcony1 from '@/assets/balcony_1.jpeg';
 import view2 from '@/assets/view_2.jpeg';
-import front from '@/assets/front.jpeg';
-import washroom2 from '@/assets/washroom_2.jpeg';
-import washroom3 from '@/assets/washroom_3.jpeg';
+import masterBedroom1 from '@/assets/rooms/master-bedroom-1.jpeg';
+import masterBedroom2 from '@/assets/rooms/master-bedroom-2.jpeg';
+import singleRoom1 from '@/assets/rooms/single-room-1.jpeg';
+import singleRoom2 from '@/assets/rooms/single-room-2.jpeg';
+import bathroom from '@/assets/rooms/bathroom.jpeg';
+import diningArea from '@/assets/rooms/dining-area.jpeg';
 
 const Gallery = () => {
   const { t, language } = useLanguage();
@@ -21,17 +22,18 @@ const Gallery = () => {
   const images = [
     { src: hero, category: 'Property', title: { en: 'Property Entrance', si: 'දේපල ප්‍රවේශය' } },
     { src: front, category: 'Property', title: { en: 'Front View', si: 'ඉදිරිපස දර්ශනය' } },
-    { src: room, category: 'Rooms', title: { en: 'Deluxe Room', si: 'ඩීලක්ස් කාමරය' } },
-    { src: room1, category: 'Rooms', title: { en: 'Superior Room', si: 'සුපීරියර් කාමරය' } },
-    { src: room2, category: 'Rooms', title: { en: 'Family Suite', si: 'පවුල් සූට්' } },
+    { src: masterBedroom1, category: 'Rooms', title: { en: 'Master Bedroom I', si: 'ප්‍රධාන නිදන කාමරය I' } },
+    { src: masterBedroom2, category: 'Rooms', title: { en: 'Master Bedroom II', si: 'ප්‍රධාන නිදන කාමරය II' } },
+    { src: singleRoom1, category: 'Rooms', title: { en: 'Single Room I', si: 'තනි කාමරය I' } },
+    { src: singleRoom2, category: 'Rooms', title: { en: 'Single Room II', si: 'තනි කාමරය II' } },
     { src: balcony, category: 'Views', title: { en: 'Balcony View', si: 'බැල්කනි දර්ශනය' } },
     { src: balcony1, category: 'Views', title: { en: 'Morning View', si: 'උදෑසන දර්ශනය' } },
     { src: view2, category: 'Views', title: { en: 'Scenic View', si: 'සුන්දර දර්ශනය' } },
-    { src: washroom2, category: 'Bathrooms', title: { en: 'Modern Bathroom', si: 'නවීන නාන කාමරය' } },
-    { src: washroom3, category: 'Bathrooms', title: { en: 'Premium Bathroom', si: 'ප්‍රිමියම් නාන කාමරය' } },
+    { src: bathroom, category: 'Amenities', title: { en: 'Modern Bathroom', si: 'නවීන නාන කාමරය' } },
+    { src: diningArea, category: 'Amenities', title: { en: 'Dining Area', si: 'ආහාර කාමරය' } },
   ];
 
-  const categories = ['All', 'Property', 'Rooms', 'Views', 'Bathrooms'];
+  const categories = ['All', 'Property', 'Rooms', 'Views', 'Amenities'];
 
   const filteredImages = activeCategory === 'All' 
     ? images 

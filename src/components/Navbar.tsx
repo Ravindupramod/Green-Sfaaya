@@ -24,6 +24,7 @@ const Navbar = () => {
     { path: '/rooms', label: 'nav.rooms' },
     { path: '/gallery', label: 'nav.gallery' },
     { path: '/attractions', label: 'nav.attractions' },
+    { path: '/virtual-tour', label: 'nav.virtualTour' },
     { path: '/contact', label: 'nav.contact' },
   ];
 

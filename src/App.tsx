@@ -13,6 +13,7 @@ import Rooms from "./pages/Rooms";
 import Gallery from "./pages/Gallery";
 import Attractions from "./pages/Attractions";
 import Contact from "./pages/Contact";
+import VirtualTour from "./pages/VirtualTour";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
               <Route path="/rooms" element={<Rooms />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/attractions" element={<Attractions />} />
+              <Route path="/virtual-tour" element={<VirtualTour />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

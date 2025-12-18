@@ -60,7 +60,7 @@ const Contact = () => {
       <SEO
         title="Contact & Book"
         description="Book your stay at Thaara Residence or inquire about our luxury rooms in Anuradhapura. Contact us via WhatsApp, phone, or our inquiry form."
-        keywords="book hotel Anuradhapura, contact Thaara Residence, hotel reservation Sri Lanka, spiritual retreat booking"
+        keywords="book hotel Anuradhapura, contact Thaara Residence, hotel reservation Sri Lanka, luxury accommodation booking"
         url="https://thaararesidence.com/contact"
         structuredData={contactStructuredData}
       />
@@ -79,7 +79,7 @@ const Contact = () => {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6">
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="font-sans text-sm text-primary tracking-wide">Begin Your Journey</span>
+            <span className="font-sans text-sm text-primary tracking-wide">Get in Touch</span>
           </div>
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 tracking-tight">
             {t('contact.title')}
@@ -103,7 +103,7 @@ const Contact = () => {
               <div className="absolute -inset-4 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 rounded-3xl blur-xl" />
               <div className="relative bg-card/80 backdrop-blur-luxury p-10 rounded-2xl shadow-luxury border border-primary/10">
                 <div className="mb-8">
-                  <h2 className="font-serif text-3xl font-bold text-foreground mb-2">Reserve Your Sanctuary</h2>
+                  <h2 className="font-serif text-3xl font-bold text-foreground mb-2">Reserve Your Stay</h2>
                   <p className="font-sans text-muted-foreground">Complete the form below and we'll respond within 24 hours</p>
                 </div>
                 
@@ -182,10 +182,8 @@ const Contact = () => {
                         <SelectValue placeholder="Select your preferred room" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="deluxe">{t('room.deluxe')}</SelectItem>
-                        <SelectItem value="superior">{t('room.superior')}</SelectItem>
-                        <SelectItem value="family">{t('room.family')}</SelectItem>
-                        <SelectItem value="executive">{t('room.executive')}</SelectItem>
+                        <SelectItem value="master">Master Bedroom ($85/night)</SelectItem>
+                        <SelectItem value="single">Single Room ($55/night)</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -198,7 +196,7 @@ const Contact = () => {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="font-sans bg-background/50 border-border/50 focus:border-primary/50 transition-all duration-300 resize-none"
-                      placeholder="Tell us about your spiritual journey or any special requests..."
+                      placeholder="Tell us about any special requests or preferences..."
                     />
                   </div>
 
@@ -217,7 +215,7 @@ const Contact = () => {
             <div className="space-y-8">
               <div>
                 <h2 className="font-serif text-3xl font-bold text-foreground mb-2">Connect With Us</h2>
-                <p className="font-sans text-muted-foreground mb-8">We're here to assist with your spiritual retreat</p>
+                <p className="font-sans text-muted-foreground mb-8">We're here to assist with your stay</p>
                 
                 <div className="space-y-4">
                   <a
@@ -305,16 +303,16 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Spiritual Journey Banner */}
+      {/* Heritage Experience Banner */}
       <section className="py-16 bg-gradient-to-r from-secondary via-card to-secondary relative overflow-hidden">
         <div className="absolute inset-0 bg-luxury-radial opacity-30" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">
-            Your Spiritual Journey Awaits
+            Your Heritage Experience Awaits
           </h3>
           <p className="font-sans text-muted-foreground max-w-2xl mx-auto">
-            Nestled in the sacred city of Anuradhapura, Thaara Residence offers a peaceful sanctuary 
-            for those seeking spiritual enlightenment and cultural immersion.
+            Located in the historic city of Anuradhapura, Thaara Residence offers refined elegance 
+            and proximity to UNESCO World Heritage sites for an unforgettable cultural experience.
           </p>
         </div>
       </section>

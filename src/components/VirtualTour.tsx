@@ -1,11 +1,8 @@
-import { useState, Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, PerspectiveCamera, Environment, useTexture, Html } from '@react-three/drei';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { useState } from 'react';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Eye, ChevronLeft, ChevronRight, X, Maximize2, RotateCcw } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, Expand, Home, Bath, UtensilsCrossed } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import * as THREE from 'three';
 
 import masterBedroom1 from '@/assets/rooms/master-bedroom-1.jpeg';
 import masterBedroom2 from '@/assets/rooms/master-bedroom-2.jpeg';
@@ -14,287 +11,254 @@ import singleRoom2 from '@/assets/rooms/single-room-2.jpeg';
 import bathroom from '@/assets/rooms/bathroom.jpeg';
 import diningArea from '@/assets/rooms/dining-area.jpeg';
 
-interface RoomScene {
+interface RoomGallery {
   id: string;
   name: string;
   nameSi: string;
-  images: string[];
+  image: string;
   description: string;
   descriptionSi: string;
+  category: 'bedroom' | 'bathroom' | 'common';
 }
 
-const roomScenes: RoomScene[] = [
+const roomGalleries: RoomGallery[] = [
   {
     id: 'master1',
     name: 'Master Bedroom I',
     nameSi: 'ප්‍රධාන නිදන කාමරය I',
-    images: [masterBedroom1],
+    image: masterBedroom1,
     description: 'Elegant master bedroom with king-size bed and premium wooden furnishings',
     descriptionSi: 'කිං-සයිස් ඇඳ සහ උසස් ලී ගෘහ භාණ්ඩ සහිත අලංකාර ප්‍රධාන නිදන කාමරය',
+    category: 'bedroom',
   },
   {
     id: 'master2',
     name: 'Master Bedroom II',
     nameSi: 'ප්‍රධාන නිදන කාමරය II',
-    images: [masterBedroom2],
+    image: masterBedroom2,
     description: 'Spacious master bedroom with natural lighting and warm ambiance',
     descriptionSi: 'ස්වාභාවික ආලෝකය සහ උණුසුම් වාතාවරණය සහිත පුළුල් ප්‍රධාන නිදන කාමරය',
+    category: 'bedroom',
   },
   {
     id: 'single1',
     name: 'Single Room I',
     nameSi: 'තනි කාමරය I',
-    images: [singleRoom1],
+    image: singleRoom1,
     description: 'Cozy single room with elegant wooden furniture and essential amenities',
     descriptionSi: 'අලංකාර ලී ගෘහ භාණ්ඩ සහ අත්‍යවශ්‍ය පහසුකම් සහිත සුවපහසු තනි කාමරය',
+    category: 'bedroom',
   },
   {
     id: 'single2',
     name: 'Single Room II',
     nameSi: 'තනි කාමරය II',
-    images: [singleRoom2],
+    image: singleRoom2,
     description: 'Charming single room with warm natural light and premium bedding',
     descriptionSi: 'උණුසුම් ස්වාභාවික ආලෝකය සහ උසස් ඇඳ ඇතිරිලි සහිත ආකර්ෂණීය තනි කාමරය',
+    category: 'bedroom',
   },
   {
     id: 'bathroom',
     name: 'Modern Bathroom',
     nameSi: 'නවීන නාන කාමරය',
-    images: [bathroom],
+    image: bathroom,
     description: 'Contemporary bathroom with premium fixtures and elegant design',
     descriptionSi: 'ප්‍රීමියම් සවිකෘත සහ අලංකාර නිර්මාණය සහිත සමකාලීන නාන කාමරය',
+    category: 'bathroom',
   },
   {
     id: 'dining',
     name: 'Dining Area',
     nameSi: 'ආහාර කාමරය',
-    images: [diningArea],
+    image: diningArea,
     description: 'Elegant common dining space with wooden furnishings',
     descriptionSi: 'ලී ගෘහ භාණ්ඩ සහිත අලංකාර පොදු ආහාර අවකාශය',
+    category: 'common',
   },
 ];
 
-function ImagePlane({ imageUrl, position }: { imageUrl: string; position: [number, number, number] }) {
-  const texture = useTexture(imageUrl);
-  texture.colorSpace = THREE.SRGBColorSpace;
-  
-  return (
-    <mesh position={position} rotation={[0, 0, 0]}>
-      <planeGeometry args={[4, 3]} />
-      <meshStandardMaterial map={texture} side={THREE.DoubleSide} />
-    </mesh>
-  );
-}
-
-function RoomShowcase({ images }: { images: string[] }) {
-  return (
-    <>
-      <ambientLight intensity={0.8} />
-      <directionalLight position={[5, 5, 5]} intensity={0.5} />
-      <PerspectiveCamera makeDefault position={[0, 0, 5]} fov={50} />
-      <OrbitControls
-        enableZoom={true}
-        enablePan={false}
-        minDistance={3}
-        maxDistance={8}
-        autoRotate
-        autoRotateSpeed={0.5}
-        minPolarAngle={Math.PI / 3}
-        maxPolarAngle={Math.PI / 1.5}
-      />
-      <Suspense fallback={
-        <Html center>
-          <div className="text-primary font-sans text-sm">Loading...</div>
-        </Html>
-      }>
-        {images.map((img, idx) => {
-          const angle = (idx / images.length) * Math.PI * 2;
-          const radius = images.length > 1 ? 2.5 : 0;
-          const x = Math.sin(angle) * radius;
-          const z = Math.cos(angle) * radius - 2;
-          return (
-            <ImagePlane
-              key={idx}
-              imageUrl={img}
-              position={[x, 0, z]}
-            />
-          );
-        })}
-      </Suspense>
-      <Environment preset="apartment" />
-    </>
-  );
-}
-
-function LoadingSpinner() {
-  return (
-    <div className="absolute inset-0 flex items-center justify-center bg-background/80">
-      <div className="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
-    </div>
-  );
-}
+const categoryIcons = {
+  bedroom: Home,
+  bathroom: Bath,
+  common: UtensilsCrossed,
+};
 
 const VirtualTour = () => {
   const { language } = useLanguage();
-  const [currentSceneIndex, setCurrentSceneIndex] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
-  
-  const currentScene = roomScenes[currentSceneIndex];
+  const [selectedImage, setSelectedImage] = useState<RoomGallery | null>(null);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  const nextScene = () => {
-    setCurrentSceneIndex((prev) => (prev + 1) % roomScenes.length);
+  const openLightbox = (room: RoomGallery, index: number) => {
+    setSelectedImage(room);
+    setLightboxIndex(index);
   };
 
-  const prevScene = () => {
-    setCurrentSceneIndex((prev) => (prev - 1 + roomScenes.length) % roomScenes.length);
+  const closeLightbox = () => {
+    setSelectedImage(null);
+  };
+
+  const nextImage = () => {
+    setLightboxIndex((prev) => (prev + 1) % roomGalleries.length);
+    setSelectedImage(roomGalleries[(lightboxIndex + 1) % roomGalleries.length]);
+  };
+
+  const prevImage = () => {
+    const newIndex = (lightboxIndex - 1 + roomGalleries.length) % roomGalleries.length;
+    setLightboxIndex(newIndex);
+    setSelectedImage(roomGalleries[newIndex]);
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-secondary/50 to-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--primary)/0.05),transparent_50%)]" />
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent to-primary/50" />
-            <span className="font-sans text-sm uppercase tracking-[0.25em] text-primary font-medium">
-              {language === 'en' ? 'Virtual Experience' : 'අතථ්‍ය අත්දැකීම'}
-            </span>
-            <div className="h-px w-12 bg-gradient-to-l from-transparent to-primary/50" />
-          </div>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-            {language === 'en' ? '360° Room' : '360° කාමර'}
-            <span className="block text-gradient-gold">{language === 'en' ? 'Virtual Tour' : 'අතථ්‍ය චාරිකාව'}</span>
-          </h2>
-          <p className="font-sans text-muted-foreground max-w-2xl mx-auto text-lg">
-            {language === 'en' 
-              ? 'Explore our luxurious accommodations in stunning 3D. Drag to rotate, scroll to zoom.'
-              : 'අපගේ සුඛෝපභෝගී නවාතැන් විශිෂ්ට 3D තුළ ගවේෂණය කරන්න. කරකවන්න ඇදගන්න, විශාලනය කිරීමට අනුචලනය කරන්න.'
-            }
-          </p>
+    <section className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        {/* Elegant Grid Gallery */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {roomGalleries.map((room, index) => {
+            const IconComponent = categoryIcons[room.category];
+            return (
+              <div
+                key={room.id}
+                className="group relative overflow-hidden rounded-xl bg-card border border-border/30 shadow-lg hover:shadow-luxury-lg transition-all duration-500 cursor-pointer"
+                onClick={() => openLightbox(room, index)}
+              >
+                {/* Image Container */}
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={room.image}
+                    alt={language === 'en' ? room.name : room.nameSi}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                  />
+                </div>
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+
+                {/* Category Badge */}
+                <div className="absolute top-4 left-4">
+                  <div className="flex items-center gap-2 px-3 py-1.5 bg-background/90 backdrop-blur-sm rounded-full">
+                    <IconComponent className="w-3.5 h-3.5 text-primary" />
+                    <span className="text-xs font-medium text-foreground capitalize">
+                      {room.category}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Expand Icon */}
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="p-2 bg-primary/90 backdrop-blur-sm rounded-full">
+                    <Expand className="w-4 h-4 text-primary-foreground" />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="absolute bottom-0 left-0 right-0 p-5 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  <h3 className="font-serif text-xl font-semibold text-white mb-2">
+                    {language === 'en' ? room.name : room.nameSi}
+                  </h3>
+                  <p className="text-sm text-white/80 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                    {language === 'en' ? room.description : room.descriptionSi}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
-        {/* Room Selector */}
-        <div className="flex flex-wrap justify-center gap-3 mb-8">
-          {roomScenes.map((scene, idx) => (
-            <button
-              key={scene.id}
-              onClick={() => setCurrentSceneIndex(idx)}
-              className={`px-5 py-2.5 rounded-full font-sans text-sm font-medium transition-all duration-300 ${
-                idx === currentSceneIndex
-                  ? 'bg-primary text-primary-foreground shadow-luxury'
-                  : 'bg-card border border-border/50 text-foreground/70 hover:border-primary/30 hover:text-primary'
-              }`}
-            >
-              {language === 'en' ? scene.name : scene.nameSi}
-            </button>
-          ))}
+        {/* View All Button */}
+        <div className="flex justify-center mt-12">
+          <Button
+            variant="outline"
+            size="lg"
+            className="px-8 py-6 text-base border-primary/30 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-500 group"
+            onClick={() => openLightbox(roomGalleries[0], 0)}
+          >
+            <Expand className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+            {language === 'en' ? 'View Full Gallery' : 'සම්පූර්ණ ගැලරිය බලන්න'}
+          </Button>
         </div>
+      </div>
 
-        {/* 3D Viewer */}
-        <div className="relative max-w-5xl mx-auto">
-          <div className="relative aspect-[16/10] bg-card rounded-2xl overflow-hidden shadow-luxury-lg border border-border/50">
-            <Suspense fallback={<LoadingSpinner />}>
-              <Canvas>
-                <RoomShowcase images={currentScene.images} />
-              </Canvas>
-            </Suspense>
+      {/* Lightbox Dialog */}
+      <Dialog open={!!selectedImage} onOpenChange={closeLightbox}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] w-full h-[90vh] p-0 bg-foreground/95 backdrop-blur-xl border-none">
+          {/* Close Button */}
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 z-50 p-3 bg-background/20 backdrop-blur-sm rounded-full text-white hover:bg-background/40 transition-colors"
+          >
+            <X className="w-5 h-5" />
+          </button>
 
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevScene}
-              className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-background/80 backdrop-blur-sm rounded-full border border-border/50 text-foreground/70 hover:text-primary hover:border-primary/30 transition-all shadow-lg"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={nextScene}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-background/80 backdrop-blur-sm rounded-full border border-border/50 text-foreground/70 hover:text-primary hover:border-primary/30 transition-all shadow-lg"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevImage}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-50 p-3 bg-background/20 backdrop-blur-sm rounded-full text-white hover:bg-background/40 transition-colors"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={nextImage}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-50 p-3 bg-background/20 backdrop-blur-sm rounded-full text-white hover:bg-background/40 transition-colors"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
 
-            {/* Room Info Overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-foreground/90 to-transparent">
-              <h3 className="font-serif text-2xl font-bold text-white mb-2">
-                {language === 'en' ? currentScene.name : currentScene.nameSi}
-              </h3>
-              <p className="font-sans text-sm text-white/70">
-                {language === 'en' ? currentScene.description : currentScene.descriptionSi}
-              </p>
+          {/* Main Image */}
+          {selectedImage && (
+            <div className="w-full h-full flex items-center justify-center p-8">
+              <div className="relative max-w-5xl w-full">
+                <img
+                  src={selectedImage.image}
+                  alt={language === 'en' ? selectedImage.name : selectedImage.nameSi}
+                  className="w-full h-auto max-h-[70vh] object-contain rounded-lg shadow-2xl"
+                />
+                
+                {/* Image Info */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent rounded-b-lg">
+                  <h3 className="font-serif text-2xl font-bold text-white mb-2">
+                    {language === 'en' ? selectedImage.name : selectedImage.nameSi}
+                  </h3>
+                  <p className="text-white/80 text-sm">
+                    {language === 'en' ? selectedImage.description : selectedImage.descriptionSi}
+                  </p>
+                </div>
+              </div>
             </div>
+          )}
 
-            {/* Controls hint */}
-            <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1.5 bg-background/60 backdrop-blur-sm rounded-full">
-              <RotateCcw className="w-3.5 h-3.5 text-foreground/60" />
-              <span className="font-sans text-xs text-foreground/60">
-                {language === 'en' ? 'Drag to rotate' : 'කරකවන්න ඇදගන්න'}
-              </span>
-            </div>
-          </div>
-
-          {/* Scene indicators */}
-          <div className="flex justify-center gap-2 mt-6">
-            {roomScenes.map((_, idx) => (
+          {/* Thumbnail Strip */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 p-3 bg-background/30 backdrop-blur-md rounded-2xl max-w-[90%] overflow-x-auto">
+            {roomGalleries.map((room, idx) => (
               <button
-                key={idx}
-                onClick={() => setCurrentSceneIndex(idx)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  idx === currentSceneIndex 
-                    ? 'w-8 bg-primary' 
-                    : 'bg-border hover:bg-primary/50'
+                key={room.id}
+                onClick={() => {
+                  setSelectedImage(room);
+                  setLightboxIndex(idx);
+                }}
+                className={`relative flex-shrink-0 w-16 h-12 rounded-lg overflow-hidden transition-all duration-300 ${
+                  idx === lightboxIndex
+                    ? 'ring-2 ring-primary ring-offset-2 ring-offset-transparent scale-110'
+                    : 'opacity-60 hover:opacity-100'
                 }`}
-              />
+              >
+                <img
+                  src={room.image}
+                  alt={room.name}
+                  className="w-full h-full object-cover"
+                />
+              </button>
             ))}
           </div>
-        </div>
 
-        {/* Full screen dialog */}
-        <Dialog open={isOpen} onOpenChange={setIsOpen}>
-          <DialogTrigger asChild>
-            <div className="flex justify-center mt-8">
-              <Button 
-                variant="outline" 
-                className="px-8 py-6 text-base border-primary/30 hover:bg-primary hover:text-primary-foreground transition-all duration-500"
-              >
-                <Maximize2 className="w-5 h-5 mr-2" />
-                {language === 'en' ? 'View Full Screen' : 'සම්පූර්ණ තිරය බලන්න'}
-              </Button>
-            </div>
-          </DialogTrigger>
-          <DialogContent className="max-w-[95vw] max-h-[95vh] w-full h-[90vh] p-0 bg-foreground border-none">
-            <button
-              onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 z-50 p-2 bg-background/80 rounded-full text-foreground hover:bg-background transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            <div className="w-full h-full">
-              <Suspense fallback={<LoadingSpinner />}>
-                <Canvas>
-                  <RoomShowcase images={currentScene.images} />
-                </Canvas>
-              </Suspense>
-            </div>
-            {/* Room selector in fullscreen */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 p-2 bg-background/80 backdrop-blur-sm rounded-full">
-              {roomScenes.map((scene, idx) => (
-                <button
-                  key={scene.id}
-                  onClick={() => setCurrentSceneIndex(idx)}
-                  className={`px-4 py-2 rounded-full font-sans text-xs font-medium transition-all ${
-                    idx === currentSceneIndex
-                      ? 'bg-primary text-primary-foreground'
-                      : 'text-foreground/70 hover:text-primary'
-                  }`}
-                >
-                  {language === 'en' ? scene.name : scene.nameSi}
-                </button>
-              ))}
-            </div>
-          </DialogContent>
-        </Dialog>
-      </div>
+          {/* Counter */}
+          <div className="absolute top-4 left-4 px-4 py-2 bg-background/20 backdrop-blur-sm rounded-full">
+            <span className="text-white text-sm font-medium">
+              {lightboxIndex + 1} / {roomGalleries.length}
+            </span>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

@@ -15,7 +15,7 @@ export const translations: Translations = {
   'nav.rooms': { en: 'Rooms', si: 'කාමර' },
   'nav.gallery': { en: 'Gallery', si: 'ගැලරිය' },
   'nav.attractions': { en: 'Attractions', si: 'ආකර්ෂණ' },
-  'nav.virtualTour': { en: 'Virtual Tour', si: 'අතත්‍ය චාරිකාව' },
+  'nav.virtualTour': { en: 'Explore', si: 'ගවේෂණය' },
   'nav.contact': { en: 'Contact', si: 'සම්බන්ධ වන්න' },
 
   // Hero

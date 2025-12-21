@@ -33,10 +33,10 @@ const Index = () => {
   return (
     <>
       <SEO
-        title="Thaara Residence | Luxury Boutique Hotel in Anuradhapura, Sri Lanka"
-        description="Discover refined elegance at Thaara Residence, an exclusive boutique hotel near UNESCO World Heritage sites in Anuradhapura, Sri Lanka. Experience unparalleled luxury and comfort."
-        keywords="Anuradhapura luxury hotel, boutique accommodation Sri Lanka, UNESCO heritage sites hotel, exclusive residence Anuradhapura"
-        url="https://thaararesidence.com"
+        title="Green Safaaya | Luxury Boutique Hotel in Anuradhapura, Sri Lanka"
+        description="Discover refined elegance at Green Safaaya, an exclusive boutique hotel near UNESCO World Heritage sites in Anuradhapura, Sri Lanka. Experience unparalleled luxury and comfort."
+        keywords="Anuradhapura luxury hotel, boutique accommodation Sri Lanka, UNESCO heritage sites hotel, Green Safaaya Anuradhapura"
+        url="https://greensafaaya.com"
       />
       <div className="min-h-screen">
       {/* Hero Section */}
@@ -44,7 +44,7 @@ const Index = () => {
         <div className="absolute inset-0">
           <img
             src={heroImage}
-            alt="Thaara Residence"
+            alt="Green Safaaya"
             className="w-full h-full object-cover scale-105 animate-[zoomOut_20s_ease-out_forwards]"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/30 to-foreground/80" />
@@ -67,8 +67,8 @@ const Index = () => {
               <Sparkles className="h-4 w-4 text-primary" />
             </div>
             <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-6 text-shadow-luxury tracking-tight">
-              Thaara
-              <span className="block text-5xl md:text-6xl lg:text-7xl font-light text-primary mt-2">Residence</span>
+              Green Safaaya
+              <span className="block text-5xl md:text-6xl lg:text-7xl font-light text-primary mt-2">Boutique Hotel</span>
             </h1>
             <p className="font-sans text-lg md:text-xl text-white/85 mb-6 max-w-2xl mx-auto leading-relaxed font-light">
               {language === 'en' 
@@ -169,7 +169,7 @@ const Index = () => {
               <div className="absolute -inset-6 bg-gradient-to-br from-primary/15 via-transparent to-accent/15 rounded-3xl blur-2xl" />
               <img
                 src={viewImage}
-                alt="Thaara Residence View"
+                alt="Green Safaaya View"
                 className="relative rounded-2xl shadow-luxury-lg w-full h-[500px] object-cover"
               />
               <div className="absolute -bottom-8 -left-8 bg-card/95 backdrop-blur-luxury p-8 rounded-2xl shadow-luxury border border-primary/10">

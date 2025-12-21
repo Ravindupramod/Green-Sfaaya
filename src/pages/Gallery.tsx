@@ -55,9 +55,9 @@ const Gallery = () => {
     <>
       <SEO
         title="Photo Gallery"
-        description="Explore our luxury rooms, stunning views, and modern amenities at Thaara Residence through our photo gallery. See why guests love their spiritual retreat experience."
-        keywords="Thaara Residence photos, Anuradhapura hotel gallery, hotel room photos Sri Lanka, boutique hotel images"
-        url="https://thaararesidence.com/gallery"
+        description="Explore our luxury rooms, stunning views, and modern amenities at Green Safaaya through our photo gallery. See why guests love their stay experience."
+        keywords="Green Safaaya photos, Anuradhapura hotel gallery, hotel room photos Sri Lanka, boutique hotel images"
+        url="https://greensafaaya.com/gallery"
       />
       <div className="min-h-screen pt-20">
       {/* Hero Section */}

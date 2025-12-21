@@ -19,7 +19,7 @@ const Footer = () => {
               <Sparkles className="w-6 h-6 text-primary" />
               <div>
                 <h3 className="font-serif text-3xl font-bold">
-                  <span className="text-primary">Thaara</span> Residence
+                  <span className="text-primary">Green</span> Safaaya
                 </h3>
                 <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-background/50">Boutique Hotel</p>
               </div>
@@ -64,11 +64,11 @@ const Footer = () => {
                 </div>
                 <span className="font-sans text-sm">+94 77 908 4494</span>
               </a>
-              <a href="mailto:info@thaararesidence.com" className="flex items-center space-x-3 text-background/50 hover:text-primary transition-colors duration-300 group">
+              <a href="mailto:info@greensafaaya.com" className="flex items-center space-x-3 text-background/50 hover:text-primary transition-colors duration-300 group">
                 <div className="w-10 h-10 rounded-full bg-background/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <Mail className="h-4 w-4" />
                 </div>
-                <span className="font-sans text-sm">info@thaararesidence.com</span>
+                <span className="font-sans text-sm">info@greensafaaya.com</span>
               </a>
               <div className="flex items-start space-x-3 text-background/50">
                 <div className="w-10 h-10 rounded-full bg-background/5 flex items-center justify-center flex-shrink-0">
@@ -83,7 +83,7 @@ const Footer = () => {
         <div className="border-t border-background/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-background/40 font-sans text-sm">
-              © {new Date().getFullYear()} Thaara Residence. {t('footer.rights')}.
+              © {new Date().getFullYear()} Green Safaaya. {t('footer.rights')}.
             </p>
             <div className="flex items-center gap-6">
               <span className="text-background/30 font-sans text-xs">Historic City of Anuradhapura, Sri Lanka</span>

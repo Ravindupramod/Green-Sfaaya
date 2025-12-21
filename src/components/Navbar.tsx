@@ -44,8 +44,8 @@ const Navbar = () => {
               <Sparkles className="w-6 h-6 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
             </div>
             <div className="flex flex-col">
-              <span className="font-serif text-2xl font-bold text-gradient-gold tracking-wide">Thaara</span>
-              <span className="font-sans text-[10px] uppercase tracking-[0.3em] text-muted-foreground -mt-1">Residence</span>
+              <span className="font-serif text-2xl font-bold text-gradient-gold tracking-wide">Green Safaaya</span>
+              <span className="font-sans text-[10px] uppercase tracking-[0.3em] text-muted-foreground -mt-1">Boutique Hotel</span>
             </div>
           </Link>
 

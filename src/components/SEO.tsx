@@ -11,15 +11,15 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = 'Thaara Residence | Luxury Spiritual Retreat in Anuradhapura',
-  description = 'Experience spiritual tranquility at Thaara Residence, a luxury boutique hotel near UNESCO World Heritage sites in Anuradhapura, Sri Lanka.',
-  keywords = 'Anuradhapura hotel, spiritual retreat Sri Lanka, luxury accommodation, Buddhist pilgrimage hotel',
-  image = 'https://thaararesidence.com/og-image.jpg',
-  url = 'https://thaararesidence.com',
+  title = 'Green Safaaya | Luxury Boutique Hotel in Anuradhapura',
+  description = 'Experience refined elegance at Green Safaaya, a luxury boutique hotel near UNESCO World Heritage sites in Anuradhapura, Sri Lanka.',
+  keywords = 'Anuradhapura hotel, luxury hotel Sri Lanka, luxury accommodation, heritage hotel',
+  image = 'https://greensafaaya.com/og-image.jpg',
+  url = 'https://greensafaaya.com',
   type = 'website',
   structuredData,
 }: SEOProps) => {
-  const fullTitle = title.includes('Thaara') ? title : `${title} | Thaara Residence`;
+  const fullTitle = title.includes('Green Safaaya') ? title : `${title} | Green Safaaya`;
 
   return (
     <Helmet>

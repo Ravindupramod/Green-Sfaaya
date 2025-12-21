@@ -16,8 +16,8 @@ interface LocationPoint {
 
 const locations: LocationPoint[] = [
   {
-    name: 'Thaara Residence',
-    nameSi: 'තාර නිවාසය',
+    name: 'Green Safaaya',
+    nameSi: 'ග්‍රීන් සෆායා',
     coordinates: [80.4037, 8.3114],
     type: 'hotel',
   },
@@ -207,7 +207,7 @@ const LocationMap = () => {
           </h2>
           <p className="font-sans text-muted-foreground max-w-2xl mx-auto text-lg">
             {language === 'en' 
-              ? 'Discover the ancient wonders of Anuradhapura, all within easy reach of Thaara Residence'
+              ? 'Discover the ancient wonders of Anuradhapura, all within easy reach of Green Safaaya'
               : 'අනුරාධපුරයේ පුරාණ ආශ්චර්යයන් සොයා ගන්න, සියල්ල තාර නිවාසයට පහසුවෙන් ළඟා විය හැකිය'
             }
           </p>
@@ -273,7 +273,7 @@ const LocationMap = () => {
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <div className="w-4 h-4 bg-primary rounded-full" />
-                  <span className="font-sans text-sm text-foreground">Thaara Residence</span>
+                  <span className="font-sans text-sm text-foreground">Green Safaaya</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-4 h-4 bg-accent rounded-full" />

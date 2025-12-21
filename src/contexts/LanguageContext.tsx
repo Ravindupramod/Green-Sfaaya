@@ -25,8 +25,8 @@ export const translations: Translations = {
   'hero.inquire': { en: 'Make an Inquiry', si: 'විමසීමක් කරන්න' },
 
   // About Section
-  'about.title': { en: 'About Thaara Residence', si: 'තාර නිවාසය ගැන' },
-  'about.description': { en: 'Nestled in the serene New Town of Anuradhapura, Thaara Residence offers a perfect blend of modern comfort and traditional Sri Lankan hospitality. Our elegantly designed rooms feature private balconies with stunning views, ensuring a memorable stay near the sacred ancient city.', si: 'අනුරාධපුරයේ නිස්කලංක නව නගරයේ පිහිටි තාර නිවාසය නවීන සුවපහසුව සහ සම්ප්‍රදායික ශ්‍රී ලාංකික ආගන්තුක සත්කාරයේ පරිපූර්ණ සම්මිශ්‍රණයක් ලබා දෙයි.' },
+  'about.title': { en: 'About Green Safaaya', si: 'ග්‍රීන් සෆායා ගැන' },
+  'about.description': { en: 'Nestled in the serene New Town of Anuradhapura, Green Safaaya offers a perfect blend of modern comfort and traditional Sri Lankan hospitality. Our elegantly designed rooms feature private balconies with stunning views, ensuring a memorable stay near the sacred ancient city.', si: 'අනුරාධපුරයේ නිස්කලංක නව නගරයේ පිහිටි ග්‍රීන් සෆායා නවීන සුවපහසුව සහ සම්ප්‍රදායික ශ්‍රී ලාංකික ආගන්තුක සත්කාරයේ පරිපූර්ණ සම්මිශ්‍රණයක් ලබා දෙයි.' },
 
   // Amenities
   'amenities.title': { en: 'Our Amenities', si: 'අපගේ පහසුකම්' },

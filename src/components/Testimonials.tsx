@@ -6,8 +6,8 @@ const testimonials = [
     name: 'Sarah Mitchell',
     location: 'United Kingdom',
     quote: {
-      en: 'Thaara Residence exceeded all expectations. The attention to detail, impeccable service, and stunning views made our anniversary trip absolutely unforgettable.',
-      si: 'තාර රෙසිඩන්ස් සියලු අපේක්ෂාවන් ඉක්මවා ගියා. විස්තර කෙරෙහි අවධානය, නිර්දෝෂී සේවාව සහ අපූරු දර්ශන අපගේ සංවත්සර චාරිකාව සම්පූර්ණයෙන්ම අමතක නොවන එකක් කළා.',
+      en: 'Green Safaaya exceeded all expectations. The attention to detail, impeccable service, and stunning views made our anniversary trip absolutely unforgettable.',
+      si: 'ග්‍රීන් සෆායා සියලු අපේක්ෂාවන් ඉක්මවා ගියා. විස්තර කෙරෙහි අවධානය, නිර්දෝෂී සේවාව සහ අපූරු දර්ශන අපගේ සංවත්සර චාරිකාව සම්පූර්ණයෙන්ම අමතක නොවන එකක් කළා.',
     },
     rating: 5,
     type: 'Anniversary',

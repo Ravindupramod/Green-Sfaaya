@@ -139,9 +139,9 @@ const Attractions = () => {
     <>
       <SEO
         title="Nearby Attractions"
-        description="Discover UNESCO World Heritage Buddhist sites near Thaara Residence including Ruwanwelisaya, Jaya Sri Maha Bodhi, and Mihintale. Perfect base for your spiritual pilgrimage."
+        description="Discover UNESCO World Heritage Buddhist sites near Green Safaaya including Ruwanwelisaya, Jaya Sri Maha Bodhi, and Mihintale. Perfect base for your heritage exploration."
         keywords="Anuradhapura attractions, UNESCO sites Sri Lanka, Buddhist temples, Ruwanwelisaya, Sacred Bo Tree, Mihintale"
-        url="https://thaararesidence.com/attractions"
+        url="https://greensafaaya.com/attractions"
         structuredData={attractionsStructuredData}
       />
       <div className="min-h-screen pt-20">
@@ -275,7 +275,7 @@ const Attractions = () => {
               </h3>
               <p className="font-sans text-muted-foreground leading-relaxed mb-6">
                 {language === 'en' 
-                  ? 'Thaara Residence is perfectly located to explore all UNESCO World Heritage sites in Anuradhapura. Our concierge can arrange guided tours, transportation, and provide detailed information about each sacred site.'
+                  ? 'Green Safaaya is perfectly located to explore all UNESCO World Heritage sites in Anuradhapura. Our concierge can arrange guided tours, transportation, and provide detailed information about each sacred site.'
                   : 'අනුරාධපුරයේ සියලුම යුනෙස්කෝ ලෝක උරුම අඩවි ගවේෂණය කිරීමට තාර නිවාසය පරිපූර්ණ ස්ථානයක පිහිටා ඇත. අපගේ සේවකයින්ට මාර්ගෝපදේශිත සංචාර, ප්‍රවාහනය සහ සෑම පූජනීය ස්ථානයක් ගැනම සවිස්තරාත්මක තොරතුරු සැපයිය හැකිය.'
                 }
               </p>

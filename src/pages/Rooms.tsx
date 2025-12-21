@@ -10,8 +10,8 @@ import singleRoom2 from '@/assets/rooms/single-room-2.jpeg';
 const roomsStructuredData = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Rooms at Thaara Residence",
-  "description": "Boutique accommodation options at Thaara Residence, Anuradhapura",
+  "name": "Rooms at Green Safaaya",
+  "description": "Boutique accommodation options at Green Safaaya, Anuradhapura",
   "itemListElement": [
     {
       "@type": "HotelRoom",
@@ -82,9 +82,9 @@ const Rooms = () => {
     <>
       <SEO
         title="Rooms & Suites"
-        description="Explore our boutique rooms at Thaara Residence. 2 elegant master bedrooms and 2 cozy single rooms with modern amenities near Anuradhapura's heritage sites."
-        keywords="Anuradhapura hotel rooms, boutique accommodation Sri Lanka, master bedroom Anuradhapura, single room heritage hotel"
-        url="https://thaararesidence.com/rooms"
+        description="Explore our boutique rooms at Green Safaaya. 2 elegant master bedrooms and 2 cozy single rooms with modern amenities near Anuradhapura's heritage sites."
+        keywords="Anuradhapura hotel rooms, boutique accommodation Sri Lanka, master bedroom Anuradhapura, Green Safaaya rooms"
+        url="https://greensafaaya.com/rooms"
         structuredData={roomsStructuredData}
       />
       <div className="min-h-screen pt-20">

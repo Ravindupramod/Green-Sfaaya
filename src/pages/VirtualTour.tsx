@@ -9,10 +9,10 @@ const VirtualTour = () => {
   return (
     <>
       <SEO 
-        title={language === 'en' ? 'Explore Our Spaces - Thaara Residence' : 'අපගේ අවකාශයන් - තාර රෙසිඩන්ස්'}
+        title={language === 'en' ? 'Explore Our Spaces - Green Safaaya' : 'අපගේ අවකාශයන් - ග්‍රීන් සෆායා'}
         description={language === 'en' 
-          ? 'Explore the elegant rooms and facilities at Thaara Residence in Anuradhapura' 
-          : 'අනුරාධපුරයේ තාර රෙසිඩන්ස්හි අලංකාර කාමර සහ පහසුකම් ගවේෂණය කරන්න'}
+          ? 'Explore the elegant rooms and facilities at Green Safaaya in Anuradhapura' 
+          : 'අනුරාධපුරයේ ග්‍රීන් සෆායාහි අලංකාර කාමර සහ පහසුකම් ගවේෂණය කරන්න'}
       />
       
       <main className="min-h-screen pt-24 bg-background">

@@ -14,9 +14,9 @@ const contactStructuredData = {
   "@type": "ContactPage",
   "mainEntity": {
     "@type": "LodgingBusiness",
-    "name": "Thaara Residence",
+    "name": "Green Safaaya",
     "telephone": "+94779084494",
-    "email": "info@thaararesidence.com",
+    "email": "info@greensafaaya.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "New Town",
@@ -59,9 +59,9 @@ const Contact = () => {
     <>
       <SEO
         title="Contact & Book"
-        description="Book your stay at Thaara Residence or inquire about our luxury rooms in Anuradhapura. Contact us via WhatsApp, phone, or our inquiry form."
-        keywords="book hotel Anuradhapura, contact Thaara Residence, hotel reservation Sri Lanka, luxury accommodation booking"
-        url="https://thaararesidence.com/contact"
+        description="Book your stay at Green Safaaya or inquire about our luxury rooms in Anuradhapura. Contact us via WhatsApp, phone, or our inquiry form."
+        keywords="book hotel Anuradhapura, contact Green Safaaya, hotel reservation Sri Lanka, luxury accommodation booking"
+        url="https://greensafaaya.com/contact"
         structuredData={contactStructuredData}
       />
       <div className="min-h-screen pt-20">
@@ -247,7 +247,7 @@ const Contact = () => {
                   </a>
 
                   <a
-                    href="mailto:info@thaararesidence.com"
+                    href="mailto:info@greensafaaya.com"
                     className="group flex items-center gap-5 p-5 bg-card/60 backdrop-blur-sm rounded-xl border border-border/50 hover:border-primary/30 hover:shadow-luxury transition-all duration-500"
                   >
                     <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
@@ -255,7 +255,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-sans text-xs uppercase tracking-wider text-muted-foreground mb-1">Email</p>
-                      <p className="font-sans font-semibold text-lg text-card-foreground">info@thaararesidence.com</p>
+                      <p className="font-sans font-semibold text-lg text-card-foreground">info@greensafaaya.com</p>
                     </div>
                   </a>
 
@@ -283,7 +283,7 @@ const Contact = () => {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Thaara Residence Location"
+                    title="Green Safaaya Location"
                   />
                 </div>
               </div>
@@ -311,7 +311,7 @@ const Contact = () => {
             Your Heritage Experience Awaits
           </h3>
           <p className="font-sans text-muted-foreground max-w-2xl mx-auto">
-            Located in the historic city of Anuradhapura, Thaara Residence offers refined elegance 
+            Located in the historic city of Anuradhapura, Green Safaaya offers refined elegance 
             and proximity to UNESCO World Heritage sites for an unforgettable cultural experience.
           </p>
         </div>

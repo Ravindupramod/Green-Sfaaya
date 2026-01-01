@@ -36,6 +36,17 @@ const Chatbot = () => {
     setInputValue('');
     setIsLoading(true);
 
+    const apiKey = import.meta.env.VITE_GROQ_API_KEY;
+    const baseUrl = import.meta.env.VITE_GROQ_BASE_URL;
+
+    if (!apiKey || !baseUrl) {
+      console.error('Missing Environment Variables:', { apiKeyExists: !!apiKey, baseUrlExists: !!baseUrl });
+      setMessages(prev => [...prev, { role: 'assistant', content: "System Error: API Configuration missing. Please check your environment variables." }]);
+      setIsLoading(false);
+      return;
+    }
+
+
     try {
       const response = await fetch(`${import.meta.env.VITE_GROQ_BASE_URL}/chat/completions`, {
         method: 'POST',

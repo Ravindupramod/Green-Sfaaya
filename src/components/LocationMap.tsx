@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -87,7 +87,7 @@ const LocationMap = () => {
   const [isMapLoaded, setIsMapLoaded] = useState(false);
   const [tokenInput, setTokenInput] = useState('');
 
-  const initializeMap = (token: string) => {
+  const initializeMap = useCallback((token: string) => {
     if (!mapContainer.current || !token) return;
 
     mapboxgl.accessToken = token;
@@ -115,7 +115,7 @@ const LocationMap = () => {
         locations.forEach((location) => {
           const el = document.createElement('div');
           el.className = 'custom-marker';
-          
+
           if (location.type === 'hotel') {
             el.innerHTML = `
               <div class="relative">
@@ -165,7 +165,7 @@ const LocationMap = () => {
       console.error('Error initializing map:', error);
       setIsMapLoaded(false);
     }
-  };
+  }, [language]);
 
   const handleTokenSubmit = () => {
     if (tokenInput.trim()) {
@@ -186,12 +186,12 @@ const LocationMap = () => {
     return () => {
       map.current?.remove();
     };
-  }, []);
+  }, [initializeMap]);
 
   return (
     <section className="py-20 bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--primary)/0.05),transparent_50%)]" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-3 mb-6">
@@ -206,7 +206,7 @@ const LocationMap = () => {
             <span className="block text-gradient-gold">{language === 'en' ? 'Heritage Sites' : 'උරුම ස්ථාන'}</span>
           </h2>
           <p className="font-sans text-muted-foreground max-w-2xl mx-auto text-lg">
-            {language === 'en' 
+            {language === 'en'
               ? 'Discover the ancient wonders of Anuradhapura, all within easy reach of Green Safaaya'
               : 'අනුරාධපුරයේ පුරාණ ආශ්චර්යයන් සොයා ගන්න, සියල්ල තාර නිවාසයට පහසුවෙන් ළඟා විය හැකිය'
             }
@@ -229,7 +229,7 @@ const LocationMap = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="space-y-4">
                 <Input
                   type="text"
@@ -238,17 +238,17 @@ const LocationMap = () => {
                   onChange={(e) => setTokenInput(e.target.value)}
                   className="font-mono text-sm"
                 />
-                <Button 
-                  onClick={handleTokenSubmit} 
+                <Button
+                  onClick={handleTokenSubmit}
                   className="w-full"
                   disabled={!tokenInput.trim()}
                 >
                   <MapPin className="w-4 h-4 mr-2" />
                   {language === 'en' ? 'Load Map' : 'සිතියම පූරණය කරන්න'}
                 </Button>
-                <a 
-                  href="https://mapbox.com/" 
-                  target="_blank" 
+                <a
+                  href="https://mapbox.com/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
@@ -260,11 +260,11 @@ const LocationMap = () => {
           </div>
         ) : (
           <div className="relative">
-            <div 
-              ref={mapContainer} 
+            <div
+              ref={mapContainer}
               className="w-full h-[500px] md:h-[600px] rounded-2xl shadow-luxury-lg border border-border/50 overflow-hidden"
             />
-            
+
             {/* Legend */}
             <div className="absolute bottom-4 left-4 bg-card/95 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-border/50">
               <h4 className="font-sans text-xs uppercase tracking-wider text-muted-foreground mb-3">

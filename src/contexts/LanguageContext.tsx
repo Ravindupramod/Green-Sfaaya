@@ -26,7 +26,7 @@ export const translations: Translations = {
 
   // About Section
   'about.title': { en: 'About Green Safaaya', si: 'ග්‍රීන් සෆායා ගැන' },
-  'about.description': { en: 'Nestled in the serene New Town of Anuradhapura, Green Safaaya offers a perfect blend of modern comfort and traditional Sri Lankan hospitality. Our elegantly designed rooms feature private balconies with stunning views, ensuring a memorable stay near the sacred ancient city.', si: 'අනුරාධපුරයේ නිස්කලංක නව නගරයේ පිහිටි ග්‍රීන් සෆායා නවීන සුවපහසුව සහ සම්ප්‍රදායික ශ්‍රී ලාංකික ආගන්තුක සත්කාරයේ පරිපූර්ණ සම්මිශ්‍රණයක් ලබා දෙයි.' },
+  'about.description': { en: 'Nestled in the serene New Town of Anuradhapura, Green Safaaya offers a perfect blend of modern comfort and traditional Sri Lankan hospitality. Our thoughtfully designed rooms feature private balconies with stunning views, ensuring a memorable stay near the sacred ancient city.', si: 'අනුරාධපුරයේ නිස්කලංක නව නගරයේ පිහිටි ග්‍රීන් සෆායා නවීන සුවපහසුව සහ සම්ප්‍රදායික ශ්‍රී ලාංකික ආගන්තුක සත්කාරයේ පරිපූර්ණ සම්මිශ්‍රණයක් ලබා දෙයි.' },
 
   // Amenities
   'amenities.title': { en: 'Our Amenities', si: 'අපගේ පහසුකම්' },
@@ -46,11 +46,11 @@ export const translations: Translations = {
 
   // Room Types
   'room.master1': { en: 'Master Bedroom I', si: 'ප්‍රධාන නිදන කාමරය I' },
-  'room.master1.desc': { en: 'Elegant master bedroom with king-size bed, premium wooden furnishings, and modern amenities for a refined stay.', si: 'කිං-සයිස් ඇඳ, උසස් ලී ගෘහ භාණ්ඩ සහ නවීන පහසුකම් සහිත අලංකාර ප්‍රධාන නිදන කාමරය.' },
+  'room.master1.desc': { en: 'Refined master bedroom with king-size bed, premium wooden furnishings, and modern amenities for a sophisticated stay.', si: 'කිං-සයිස් ඇඳ, උසස් ලී ගෘහ භාණ්ඩ සහ නවීන පහසුකම් සහිත අලංකාර ප්‍රධාන නිදන කාමරය.' },
   'room.master2': { en: 'Master Bedroom II', si: 'ප්‍රධාන නිදන කාමරය II' },
   'room.master2.desc': { en: 'Spacious master bedroom featuring natural lighting, warm curtains, and comfortable furnishings for ultimate relaxation.', si: 'ස්වාභාවික ආලෝකය, උණුසුම් තිර රෙදි සහ සුවපහසු ගෘහ භාණ්ඩ සහිත පුළුල් ප්‍රධාන නිදන කාමරය.' },
   'room.single1': { en: 'Single Room I', si: 'තනි කාමරය I' },
-  'room.single1.desc': { en: 'Cozy single room with double bed, elegant wooden furniture, and all essential amenities for a comfortable stay.', si: 'ද්විත්ව ඇඳ, අලංකාර ලී ගෘහ භාණ්ඩ සහ සුවපහසු නවාතැනක් සඳහා සියලුම අත්‍යවශ්‍ය පහසුකම් සහිත සුවපහසු තනි කාමරය.' },
+  'room.single1.desc': { en: 'Cozy single room with double bed, clay-tiled accents, and all essential amenities for a comfortable stay.', si: 'ද්විත්ව ඇඳ, අලංකාර මැටි උළු භාවිතය සහ සුවපහසු නවාතැනක් සඳහා සියලුම අත්‍යවශ්‍ය පහසුකම් සහිත සුවපහසු තනි කාමරය.' },
   'room.single2': { en: 'Single Room II', si: 'තනි කාමරය II' },
   'room.single2.desc': { en: 'Charming single room with warm natural light, wooden accents, and premium bedding for restful nights.', si: 'උණුසුම් ස්වාභාවික ආලෝකය, ලී අලංකාර භාවිතය සහ සුවපහසු රාත්‍රී සඳහා උසස් ඇඳ ඇතිරිලි සහිත ආකර්ෂණීය තනි කාමරය.' },
 
@@ -73,7 +73,7 @@ export const translations: Translations = {
   'contact.checkout': { en: 'Check-out Date', si: 'පිටවන දිනය' },
   'contact.roomType': { en: 'Room Type', si: 'කාමර වර්ගය' },
   'contact.message': { en: 'Message', si: 'පණිවුඩය' },
-  'contact.send': { en: 'Send Inquiry', si: 'විමසීම යවන්න' },
+  'contact.send': { en: 'Book the Reservation', si: 'වෙන් කරවා ගන්න' },
   'contact.whatsapp': { en: 'Chat on WhatsApp', si: 'WhatsApp හි කතා කරන්න' },
   'contact.location': { en: 'Location', si: 'ස්ථානය' },
   'contact.address': { en: 'New Town, Anuradhapura, Sri Lanka', si: 'නව නගරය, අනුරාධපුරය, ශ්‍රී ලංකාව' },

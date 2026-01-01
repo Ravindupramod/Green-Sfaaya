@@ -10,7 +10,7 @@ const Footer = () => {
       {/* Decorative gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-      
+
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
@@ -43,9 +43,9 @@ const Footer = () => {
                 { to: '/attractions', label: 'nav.attractions' },
                 { to: '/contact', label: 'nav.contact' },
               ].map((link) => (
-                <Link 
+                <Link
                   key={link.to}
-                  to={link.to} 
+                  to={link.to}
                   className="block text-background/50 hover:text-primary transition-colors duration-300 font-sans text-sm"
                 >
                   {t(link.label)}
@@ -64,11 +64,11 @@ const Footer = () => {
                 </div>
                 <span className="font-sans text-sm">+94 77 908 4494</span>
               </a>
-              <a href="mailto:info@greensafaaya.com" className="flex items-center space-x-3 text-background/50 hover:text-primary transition-colors duration-300 group">
+              <a href="mailto:ravindupramod6@gmail.com" className="flex items-center space-x-3 text-background/50 hover:text-primary transition-colors duration-300 group">
                 <div className="w-10 h-10 rounded-full bg-background/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <Mail className="h-4 w-4" />
                 </div>
-                <span className="font-sans text-sm">info@greensafaaya.com</span>
+                <span className="font-sans text-sm">ravindupramod6@gmail.com</span>
               </a>
               <div className="flex items-start space-x-3 text-background/50">
                 <div className="w-10 h-10 rounded-full bg-background/5 flex items-center justify-center flex-shrink-0">

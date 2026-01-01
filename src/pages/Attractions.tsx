@@ -1,19 +1,14 @@
-import { MapPin, Clock, Star, Compass } from 'lucide-react';
+import { MapPin, Clock, Star, Compass, Sparkles } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import SEO from '@/components/SEO';
-import LocationMap from '@/components/LocationMap';
+import Reveal from '@/components/Reveal';
+import NatureOverlay from '@/components/NatureOverlay';
 
 // Import attraction images
-import ruwanwelisaya from '@/assets/attractions/ruwanwelisaya.jpg';
-import jayaSriMahaBodhi from '@/assets/attractions/jaya-sri-maha-bodhi.jpg';
-import isurumuniya from '@/assets/attractions/isurumuniya.jpg';
-import thuparamaya from '@/assets/attractions/thuparamaya.jpg';
-import abhayagiri from '@/assets/attractions/abhayagiri.jpg';
-import jetavanaramaya from '@/assets/attractions/jetavanaramaya.jpg';
-import twinPonds from '@/assets/attractions/twin-ponds.jpg';
-import mihintale from '@/assets/attractions/mihintale.jpg';
+// Attraction images are now served from public directory
+
 
 const attractionsStructuredData = {
   "@context": "https://schema.org",
@@ -45,7 +40,7 @@ const Attractions = () => {
       },
       distance: '5 km',
       time: '10 min',
-      image: ruwanwelisaya,
+      image: "/ruwanweliseya.jpg",
       highlight: true,
       tag: { en: 'UNESCO Site', si: 'යුනෙස්කෝ අඩවිය' },
     },
@@ -57,7 +52,7 @@ const Attractions = () => {
       },
       distance: '4.5 km',
       time: '8 min',
-      image: jayaSriMahaBodhi,
+      image: "/Jaya-Siri-Maha-Bodhi.jpg",
       highlight: true,
       tag: { en: 'Sacred Site', si: 'පූජනීය ස්ථානය' },
     },
@@ -69,7 +64,7 @@ const Attractions = () => {
       },
       distance: '6 km',
       time: '12 min',
-      image: isurumuniya,
+      image: "/isurumuniya.jpg",
       highlight: false,
       tag: { en: 'Rock Temple', si: 'ගල් විහාරය' },
     },
@@ -81,7 +76,7 @@ const Attractions = () => {
       },
       distance: '5.5 km',
       time: '11 min',
-      image: thuparamaya,
+      image: "/Thuparamaya.webp",
       highlight: false,
       tag: { en: 'First Stupa', si: 'පළමු ස්තූපය' },
     },
@@ -93,7 +88,7 @@ const Attractions = () => {
       },
       distance: '7 km',
       time: '15 min',
-      image: abhayagiri,
+      image: "/abhayagiri-stupa-is-located.jpg",
       highlight: true,
       tag: { en: 'Monastery', si: 'විහාරය' },
     },
@@ -105,7 +100,7 @@ const Attractions = () => {
       },
       distance: '6.5 km',
       time: '13 min',
-      image: jetavanaramaya,
+      image: "/jethawanaramaya.jpg",
       highlight: true,
       tag: { en: 'UNESCO Site', si: 'යුනෙස්කෝ අඩවිය' },
     },
@@ -117,7 +112,7 @@ const Attractions = () => {
       },
       distance: '7.5 km',
       time: '16 min',
-      image: twinPonds,
+      image: "/Kuttam Pokuna (Twin Ponds).jpg",
       highlight: false,
       tag: { en: 'Heritage', si: 'උරුමය' },
     },
@@ -129,7 +124,7 @@ const Attractions = () => {
       },
       distance: '12 km',
       time: '25 min',
-      image: mihintale,
+      image: "/Mihintale_1920x700.jpg",
       highlight: true,
       tag: { en: 'Sacred Mountain', si: 'පූජනීය කන්ද' },
     },
@@ -144,159 +139,176 @@ const Attractions = () => {
         url="https://greensafaaya.com/attractions"
         structuredData={attractionsStructuredData}
       />
-      <div className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        </div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
-            <Compass className="h-4 w-4 text-primary" />
-            <span className="font-sans text-sm text-primary font-medium tracking-wide">
-              {language === 'en' ? 'UNESCO World Heritage' : 'යුනෙස්කෝ ලෝක උරුමය'}
-            </span>
-          </div>
-          <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            {t('attractions.title')}
-          </h1>
-          <p className="font-sans text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            {t('attractions.subtitle')}
-          </p>
-        </div>
-      </section>
+      <div className="min-h-screen">
+        <NatureOverlay />
 
-      {/* Featured Attractions */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-3 mb-12">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent to-primary/50" />
-            <Star className="h-5 w-5 text-primary" />
-            <h2 className="font-serif text-2xl font-semibold text-foreground">
-              {language === 'en' ? 'Must-Visit Sacred Sites' : 'අනිවාර්යයෙන් නැරඹිය යුතු පූජනීය ස්ථාන'}
-            </h2>
-            <Star className="h-5 w-5 text-primary" />
-            <div className="h-px w-12 bg-gradient-to-l from-transparent to-primary/50" />
-          </div>
+        {/* Hero Section */}
+        <section className="relative py-32 overflow-hidden bg-background">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,theme(colors.primary.DEFAULT)_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.05]"></div>
 
-          {/* Featured Grid - Larger Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            {attractions.filter(a => a.highlight).slice(0, 4).map((attraction, index) => (
-              <Card 
-                key={index} 
-                className="group overflow-hidden bg-card border-border hover-lift cursor-pointer"
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={attraction.image}
-                    alt={attraction.name[language]}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
-                  <Badge className="absolute top-4 left-4 bg-primary/90 text-primary-foreground">
-                    {attraction.tag[language]}
-                  </Badge>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="font-serif text-2xl font-bold text-white mb-2">
-                      {attraction.name[language]}
-                    </h3>
-                    <div className="flex items-center gap-4 text-sm text-white/80">
-                      <div className="flex items-center gap-1">
-                        <MapPin className="h-4 w-4" />
-                        <span className="font-sans">{attraction.distance}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Clock className="h-4 w-4" />
-                        <span className="font-sans">{attraction.time}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <p className="font-sans text-muted-foreground leading-relaxed">
-                    {attraction.description[language]}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* More Attractions - Smaller Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {attractions.filter(a => !a.highlight || attractions.filter(x => x.highlight).indexOf(a) >= 4).map((attraction, index) => (
-              <Card 
-                key={index} 
-                className="group overflow-hidden bg-card border-border hover-lift cursor-pointer"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={attraction.image}
-                    alt={attraction.name[language]}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 to-transparent" />
-                  <Badge className="absolute top-3 left-3 bg-primary/90 text-primary-foreground text-xs">
-                    {attraction.tag[language]}
-                  </Badge>
-                </div>
-                <CardContent className="p-4">
-                  <h3 className="font-serif text-lg font-semibold text-card-foreground mb-2">
-                    {attraction.name[language]}
-                  </h3>
-                  <p className="font-sans text-sm text-muted-foreground mb-3 line-clamp-2">
-                    {attraction.description[language]}
-                  </p>
-                  <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                    <div className="flex items-center gap-1">
-                      <MapPin className="h-3 w-3 text-primary" />
-                      <span className="font-sans">{attraction.distance}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-3 w-3 text-primary" />
-                      <span className="font-sans">{attraction.time}</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Info Banner */}
-      <section className="py-12 bg-primary/5">
-        <div className="container mx-auto px-4">
-          <div className="bg-gradient-to-r from-primary/10 via-accent/5 to-primary/10 rounded-2xl p-8 md:p-12 border border-primary/20">
-            <div className="max-w-3xl mx-auto text-center">
-              <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">
-                {language === 'en' ? 'Experience Ancient History' : 'පුරාණ ඉතිහාසය අත්විඳින්න'}
-              </h3>
-              <p className="font-sans text-muted-foreground leading-relaxed mb-6">
-                {language === 'en' 
-                  ? 'Green Safaaya is perfectly located to explore all UNESCO World Heritage sites in Anuradhapura. Our concierge can arrange guided tours, transportation, and provide detailed information about each sacred site.'
-                  : 'අනුරාධපුරයේ සියලුම යුනෙස්කෝ ලෝක උරුම අඩවි ගවේෂණය කිරීමට තාර නිවාසය පරිපූර්ණ ස්ථානයක පිහිටා ඇත. අපගේ සේවකයින්ට මාර්ගෝපදේශිත සංචාර, ප්‍රවාහනය සහ සෑම පූජනීය ස්ථානයක් ගැනම සවිස්තරාත්මක තොරතුරු සැපයිය හැකිය.'
-                }
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <div className="flex items-center gap-2 px-4 py-2 bg-background rounded-full">
-                  <MapPin className="h-4 w-4 text-primary" />
-                  <span className="font-sans text-foreground">{language === 'en' ? '8 UNESCO Sites Nearby' : 'අසල යුනෙස්කෝ අඩවි 8ක්'}</span>
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-background rounded-full">
-                  <Clock className="h-4 w-4 text-primary" />
-                  <span className="font-sans text-foreground">{language === 'en' ? 'All within 30 min drive' : 'සියල්ල මිනිත්තු 30 ඇතුළත'}</span>
-                </div>
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <Reveal>
+              <div className="inline-flex items-center gap-3 px-4 py-1.5 bg-primary/5 border border-primary/10 rounded-full mb-8">
+                <Compass className="h-3 w-3 text-primary" />
+                <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-primary">
+                  {language === 'en' ? 'History & Heritage' : 'ඉතිහාසය සහ උරුමය'}
+                </span>
               </div>
+
+              <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl text-foreground mb-8 tracking-tighter leading-[0.9]">
+                {language === 'en' ? 'Unesco' : 'යුනෙස්කෝ'} <span className="text-muted-foreground italic font-light">{language === 'en' ? 'Sites' : 'අඩවි'}</span>
+              </h1>
+
+              <p className="font-sans text-base text-muted-foreground max-w-xl mx-auto leading-relaxed font-light">
+                {t('attractions.subtitle')}
+              </p>
+
+              <div className="mt-12 flex justify-center opacity-30">
+                <svg width="100" height="20" viewBox="0 0 100 20" className="text-primary fill-current">
+                  <path d="M0,10 Q25,0 50,10 T100,10" fill="none" stroke="currentColor" strokeWidth="1" />
+                </svg>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* Featured Attractions */}
+        <section className="py-16 bg-background relative">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,theme(colors.primary.DEFAULT)_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.03]"></div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <Reveal>
+              <div className="flex items-center justify-center gap-3 mb-12">
+                <div className="h-px w-12 bg-gradient-to-r from-transparent to-primary/50" />
+                <Star className="h-4 w-4 text-primary" />
+                <h2 className="font-serif text-2xl font-semibold text-foreground tracking-wide">
+                  {language === 'en' ? 'Must-Visit Sacred Sites' : 'අනිවාර්යයෙන් නැරඹිය යුතු පූජනීය ස්ථාන'}
+                </h2>
+                <Star className="h-4 w-4 text-primary" />
+                <div className="h-px w-12 bg-gradient-to-l from-transparent to-primary/50" />
+              </div>
+            </Reveal>
+
+            {/* Featured Grid - Larger Cards */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+              {attractions.filter(a => a.highlight).slice(0, 4).map((attraction, index) => (
+                <Reveal key={index} delay={index * 0.1}>
+                  <Card
+                    className="group overflow-hidden bg-card border-border hover-lift cursor-pointer h-full"
+                  >
+                    <div className="relative h-64 overflow-hidden">
+                      <img
+                        src={attraction.image}
+                        alt={attraction.name[language]}
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                      <Badge className="absolute top-4 left-4 bg-primary/90 text-primary-foreground">
+                        {attraction.tag[language]}
+                      </Badge>
+                      <div className="absolute bottom-4 left-4 right-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 className="font-serif text-2xl font-bold text-white mb-2">
+                          {attraction.name[language]}
+                        </h3>
+                        <div className="flex items-center gap-4 text-sm text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                          <div className="flex items-center gap-1">
+                            <MapPin className="h-4 w-4" />
+                            <span className="font-sans">{attraction.distance}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Clock className="h-4 w-4" />
+                            <span className="font-sans">{attraction.time}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <CardContent className="p-6 relative">
+                      <p className="font-sans text-muted-foreground leading-relaxed">
+                        {attraction.description[language]}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Reveal>
+              ))}
+            </div>
+
+            {/* More Attractions - Smaller Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {attractions.filter(a => !a.highlight || attractions.filter(x => x.highlight).indexOf(a) >= 4).map((attraction, index) => (
+                <Reveal key={index} delay={index * 0.1}>
+                  <Card
+                    className="group overflow-hidden bg-card border-border hover-lift cursor-pointer h-full"
+                  >
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={attraction.image}
+                        alt={attraction.name[language]}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                      <Badge className="absolute top-3 left-3 bg-primary/90 text-primary-foreground text-xs">
+                        {attraction.tag[language]}
+                      </Badge>
+                    </div>
+                    <CardContent className="p-5">
+                      <h3 className="font-serif text-lg font-semibold text-card-foreground mb-2">
+                        {attraction.name[language]}
+                      </h3>
+                      <p className="font-sans text-sm text-muted-foreground mb-4 line-clamp-3 leading-relaxed">
+                        {attraction.description[language]}
+                      </p>
+                      <div className="flex items-center justify-between text-xs text-muted-foreground border-t border-border pt-3">
+                        <div className="flex items-center gap-1">
+                          <MapPin className="h-3 w-3 text-primary" />
+                          <span className="font-sans">{attraction.distance}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Clock className="h-3 w-3 text-primary" />
+                          <span className="font-sans">{attraction.time}</span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Reveal>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Interactive Map Section */}
-      <LocationMap />
-    </div>
+        {/* Info Banner */}
+        <section className="py-12 bg-background">
+          <div className="container mx-auto px-4">
+            <Reveal>
+              <div className="relative overflow-hidden rounded-3xl border border-primary/20">
+                <div className="absolute inset-0 bg-primary/5 backdrop-blur-md"></div>
+                <div className="relative z-10 p-8 md:p-12 text-center">
+                  <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">
+                    {language === 'en' ? 'Experience Ancient History' : 'පුරාණ ඉතිහාසය අත්විඳින්න'}
+                  </h3>
+                  <p className="font-sans text-muted-foreground leading-relaxed mb-8 max-w-3xl mx-auto">
+                    {language === 'en'
+                      ? 'Green Safaaya is perfectly located to explore all UNESCO World Heritage sites in Anuradhapura. Our concierge can arrange guided tours, transportation, and provide detailed information about each sacred site.'
+                      : 'අනුරාධපුරයේ සියලුම යුනෙස්කෝ ලෝක උරුම අඩවි ගවේෂණය කිරීමට Green Safaaya නිවාසය පරිපූර්ණ ස්ථානයක පිහිටා ඇත. අපගේ සේවකයින්ට මාර්ගෝපදේශිත සංචාර, ප්‍රවාහනය සහ සෑම පූජනීය ස්ථානයක් ගැනම සවිස්තරාත්මක තොරතුරු සැපයිය හැකිය.'
+                    }
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-4 text-sm">
+                    <div className="flex items-center gap-2 px-5 py-2.5 bg-background/80 backdrop-blur-sm rounded-full border border-border shadow-sm">
+                      <MapPin className="h-4 w-4 text-primary" />
+                      <span className="font-sans text-foreground">{language === 'en' ? '8 UNESCO Sites Nearby' : 'අසල යුනෙස්කෝ අඩවි 8ක්'}</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-5 py-2.5 bg-background/80 backdrop-blur-sm rounded-full border border-border shadow-sm">
+                      <Clock className="h-4 w-4 text-primary" />
+                      <span className="font-sans text-foreground">{language === 'en' ? 'All within 30 min drive' : 'සියල්ල මිනිත්තු 30 ඇතුළත'}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+
+      </div>
     </>
   );
 };

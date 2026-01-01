@@ -7,72 +7,78 @@
 @layer base {
   :root {
     --background: 35 25% 97%;
-    --foreground: 30 15% 12%;
+    --foreground: 222.2 84% 4.9%;
 
-    --card: 36 30% 99%;
-    --card-foreground: 30 15% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 36 30% 99%;
-    --popover-foreground: 30 15% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 36 72% 45%;
-    --primary-foreground: 36 30% 99%;
+    --primary: 38 45% 45%;
+    --primary-foreground: 36 30% 98%;
 
-    --secondary: 35 25% 93%;
-    --secondary-foreground: 30 15% 12%;
+    --secondary: 35 25% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 35 20% 94%;
-    --muted-foreground: 30 12% 40%;
+    --muted: 35 20% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 150 40% 28%;
-    --accent-foreground: 36 30% 99%;
+    --accent: 35 25% 96%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 35 20% 88%;
-    --input: 35 20% 88%;
-    --ring: 36 72% 45%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 38 45% 45%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    --gold: 36 72% 45%;
-    --gold-light: 38 60% 60%;
-    --gold-dark: 34 75% 32%;
-    --forest: 150 40% 28%;
-    --forest-light: 150 35% 42%;
-    --cream: 35 25% 97%;
-    --warm-gray: 30 12% 40%;
-    --sacred: 270 25% 35%;
+    /* Enhanced Luxury Gold Palette */
+    --gold: 42 56% 52%;
+    /* Richer, more saturated gold */
+    --gold-light: 45 60% 85%;
+    /* Champagne highlight */
+    --gold-dark: 40 45% 30%;
+    /* Deep bronze shadow */
+
+    --forest: 150 25% 22%;
+    --forest-light: 150 20% 35%;
+    --cream: 35 30% 96%;
   }
+
   .dark {
-    --background: 30 15% 8%;
-    --foreground: 30 15% 95%;
+    --background: 20 14.3% 4.1%;
+    /* Deep rich black-brown */
+    --foreground: 210 40% 98%;
 
-    --card: 30 15% 10%;
-    --card-foreground: 30 15% 95%;
+    --card: 20 14.3% 5.5%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 30 15% 10%;
-    --popover-foreground: 30 15% 95%;
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 38 65% 50%;
-    --primary-foreground: 30 15% 8%;
+    --primary: 42 56% 58%;
+    /* Lighter gold for dark mode */
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 30 15% 15%;
-    --secondary-foreground: 30 15% 95%;
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 30 15% 18%;
-    --muted-foreground: 30 15% 65%;
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 145 35% 40%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 15% 18%;
-    --input: 30 15% 18%;
-    --ring: 38 65% 50%;
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 43 74% 49%;
   }
 }
 
@@ -82,11 +88,30 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased relative;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+  /* Noise Texture */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif tracking-tight;
   }
 }
 
@@ -94,13 +119,13 @@
   .font-serif {
     font-family: 'Cormorant Garamond', serif;
   }
-  
+
   .font-sans {
     font-family: 'Montserrat', sans-serif;
   }
 
   .text-gradient-gold {
-    @apply bg-gradient-to-r from-[hsl(var(--gold))] via-[hsl(var(--gold-light))] to-[hsl(var(--gold))] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[hsl(var(--gold-dark))] via-[hsl(var(--gold))] to-[hsl(var(--gold-dark))] bg-clip-text text-transparent;
   }
 
   .bg-luxury-gradient {
@@ -108,52 +133,55 @@
   }
 
   .bg-luxury-radial {
-    background: radial-gradient(ellipse at center, hsl(var(--gold-light) / 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle at center, hsl(var(--gold-light) / 0.1) 0%, transparent 60%);
   }
 
   .border-luxury {
-    border-image: linear-gradient(135deg, hsl(var(--gold-light)), hsl(var(--gold)), hsl(var(--gold-light))) 1;
+    border-color: hsl(var(--gold) / 0.3);
   }
 
   .shadow-luxury {
-    box-shadow: 
-      0 4px 6px -1px hsl(var(--gold) / 0.1),
-      0 10px 20px -5px hsl(var(--gold) / 0.15),
-      0 25px 50px -12px hsl(var(--foreground) / 0.25);
+    box-shadow:
+      0 10px 40px -10px hsl(var(--background) / 0.5),
+      0 0 20px -5px hsl(var(--gold) / 0.1);
   }
 
   .shadow-luxury-lg {
-    box-shadow: 
-      0 10px 25px -5px hsl(var(--gold) / 0.2),
-      0 25px 50px -12px hsl(var(--foreground) / 0.3);
+    box-shadow:
+      0 20px 50px -12px hsl(var(--background) / 0.7),
+      0 0 30px -5px hsl(var(--gold) / 0.2);
+  }
+
+  .glass-panel {
+    @apply bg-background/60 backdrop-blur-xl border border-white/10 shadow-lg;
   }
 
   .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
+    animation: fadeIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   }
 
   .animate-slide-up {
-    animation: slideUp 0.8s ease-out forwards;
+    animation: slideUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   }
 
   .animate-scale-in {
-    animation: scaleIn 0.6s ease-out forwards;
+    animation: scaleIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   }
 
   .animate-shimmer {
-    animation: shimmer 3s ease-in-out infinite;
+    animation: shimmer 4s ease-in-out infinite;
   }
 
   .hover-lift {
-    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-luxury-lg;
+    @apply transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-luxury-lg;
   }
 
   .hover-glow {
-    @apply transition-all duration-300;
+    @apply transition-all duration-500;
   }
 
   .hover-glow:hover {
-    box-shadow: 0 0 30px hsl(var(--gold) / 0.3);
+    box-shadow: 0 0 40px hsl(var(--gold) / 0.2);
   }
 
   .line-clamp-2 {
@@ -164,11 +192,11 @@
   }
 
   .text-shadow-luxury {
-    text-shadow: 0 2px 4px hsl(var(--foreground) / 0.3);
+    text-shadow: 0 4px 12px hsl(var(--foreground) / 0.2);
   }
 
   .backdrop-blur-luxury {
-    backdrop-filter: blur(12px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
   }
 }
 
@@ -176,6 +204,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -186,6 +215,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -197,6 +227,7 @@
     opacity: 0;
     transform: scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -204,9 +235,12 @@
 }
 
 @keyframes shimmer {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.7;
   }

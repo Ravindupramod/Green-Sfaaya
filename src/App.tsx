@@ -8,6 +8,8 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Chatbot from "@/components/Chatbot";
+import ScrollManager from './components/ScrollManager';
 import Index from "./pages/Index";
 import Rooms from "./pages/Rooms";
 import Gallery from "./pages/Gallery";
@@ -23,6 +25,7 @@ const App = () => (
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <LanguageProvider>
         <TooltipProvider>
+          <ScrollManager />
           <Toaster />
           <Sonner />
           <BrowserRouter>
@@ -38,11 +41,12 @@ const App = () => (
             </Routes>
             <Footer />
             <WhatsAppButton />
+            <Chatbot />
           </BrowserRouter>
         </TooltipProvider>
       </LanguageProvider>
     </ThemeProvider>
-  </QueryClientProvider>
+  </QueryClientProvider >
 );
 
 export default App;
